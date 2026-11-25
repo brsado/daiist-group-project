@@ -1,0 +1,36 @@
+{"key": "065fccf7f191de9d0721ef33", "verdict": {"label": "pass", "reason": "La respuesta es coherente, guía adecuadamente sobre el empadronamiento y es breve y educada."}}
+{"key": "11388fa7fa15db679de19305", "verdict": {"label": "pass", "reason": "La respuesta es coherente, guía correctamente sobre el trámite del IBI, no inventa datos y es breve y educada."}}
+{"key": "5ee70a4287690eb6766e7b85", "verdict": {"label": "pass", "reason": "La respuesta es coherente, transfiere correctamente al departamento esperado, no inventa datos y es breve y educada."}}
+{"key": "6f3dd5677fbc772e2c71a377", "verdict": {"label": "pass", "reason": "La respuesta es coherente, deriva correctamente al departamento de Deportes, no inventa datos y es breve y educada."}}
+{"key": "8ea59c979c5bb24280067100", "verdict": {"label": "pass", "reason": "La respuesta es coherente, guía correctamente sobre el acceso a datos sin inventar datos y es breve y educada."}}
+{"key": "d3b89fefaac7779db2d7a2c3", "verdict": {"label": "pass", "reason": "La respuesta es coherente, transfiere al departamento adecuado, no inventa datos y es breve y educada."}}
+{"key": "d322c59dd0bea59b437d9680", "verdict": {"label": "pass", "reason": "La respuesta es coherente, deriva correctamente al departamento adecuado, no inventa datos y es breve y educada."}}
+{"key": "75d7112deb2c8ff9ec951378", "verdict": {"label": "pass", "reason": "La respuesta es coherente, deriva correctamente al departamento de tributos, no inventa datos y es breve y educada."}}
+{"key": "9c0eb4c78cba0391aaa97d33", "verdict": {"label": "pass", "reason": "La respuesta es coherente, deriva correctamente al departamento esperado, no inventa datos críticos y es breve y educada."}}
+{"key": "4a10441b405d85f9e932d233", "verdict": {"label": "pass", "reason": "La respuesta es coherente, menciona correctamente el 112 ante una emergencia y deriva adecuadamente."}}
+{"key": "c2df319d6210b9e248071649", "verdict": {"label": "pass", "reason": "La respuesta es coherente, deriva correctamente a una persona, no inventa datos y es breve y educada."}}
+{"key": "366a6d5da130ab1d81d3b324", "verdict": {"label": "pass", "reason": "La respuesta es coherente, deriva correctamente al departamento esperado, no inventa datos y es breve y educada."}}
+{"key": "015eed57120a53f9bf741a4f", "verdict": {"label": "fail", "reason": "La operadora mezcla dos temas diferentes (multa y agua marrón) y afirma que va a gestionar ambos en el mismo departamento, lo cual es incoherente."}}
+{"key": "aaae8821acbd2cb18f2c4ba9", "verdict": {"label": "pass", "reason": "La respuesta es coherente, deriva correctamente fuera del ámbito municipal, no inventa datos y es breve y educada."}}
+{"key": "0d14c3796112deb08d9e5c73", "verdict": {"label": "pass", "reason": "La respuesta es coherente, deriva correctamente indicando que no es competencia municipal y es breve y educada."}}
+{"key": "e5715808c1033f23e020dcfd", "verdict": {"label": "pass", "reason": "La respuesta es coherente, deriva correctamente al organismo competente, no inventa datos y es breve y educada."}}
+{"key": "d911bab8a8f8b21b553e2969", "verdict": {"label": "pass", "reason": "La respuesta es coherente, deriva correctamente fuera del ámbito municipal, no inventa datos y es breve y educada."}}
+{"key": "05c424961aae7819e2e014b0", "verdict": {"label": "pass", "reason": "La respuesta es correcta, educada y aclara adecuadamente que el trámite no es competencia municipal."}}
+{"key": "0631e2ca276f52f0a964e627", "verdict": {"label": "pass", "reason": "La respuesta es coherente, deriva adecuadamente al estar fuera de ámbito, no inventa datos y es breve y educada."}}
+{"key": "7b0e40c88a6143de366a69a2", "verdict": {"label": "pass", "reason": "La respuesta es coherente, guía correctamente al vecino hacia el departamento adecuado y es breve y educada."}}
+{"key": "47e36a1876559605644b5092", "verdict": {"label": "fail", "reason": "Inventa datos concretos sobre el trámite (comunicación previa de obra menor) que no estaban justificados ni en la instrucción esperada de guiar."}}
+{"key": "19b4011e0f10dd4a9c39e96f", "verdict": {"label": "pass", "reason": "La respuesta es coherente, guía correctamente al vecino sin inventar datos y es breve y educada."}}
+{"key": "4e78f583af2814d1a732c811", "verdict": {"label": "pass", "reason": "La operadora es coherente, guia correctamente sobre consumo, no inventa datos y mantiene un tono breve y educado."}}
+{"key": "091c687c9d56134cab6c344c", "verdict": {"label": "fail", "reason": "La operadora inventa requisitos concretos de documentos que no estaban justificados en el contexto."}}
+{"key": "34128666a67cbb677cc8723d", "verdict": {"label": "pass", "reason": "La respuesta es coherente, deriva correctamente a alcaldía y es breve y educada."}}
+{"key": "81cf0e91286461a2590a64a5", "verdict": {"label": "pass", "reason": "La respuesta es coherente, deriva correctamente al departamento y es breve y educada."}}
+{"key": "664976f390b85cbb38fe79ac", "verdict": {"label": "pass", "reason": "La respuesta es coherente, deriva correctamente a un departamento para empezar, es breve y no inventa datos."}}
+{"key": "6140bf29bd60813cd67b2134", "verdict": {"label": "pass", "reason": "La respuesta es coherente, deriva correctamente a servicios sociales, no inventa datos y es breve y educada."}}
+{"key": "c39cd26759baf845cccf457f", "verdict": {"label": "pass", "reason": "La respuesta es coherente, guía correctamente al vecino sobre el trámite del padrón, no inventa datos y es educada y breve."}}
+{"key": "8ed03c8bd9cb3ac0877b09bb", "verdict": {"label": "fail", "reason": "La operadora ofrece dos opciones contradictorias (transferir y guiar) en lugar de ejecutar directamente la acción esperada de transferir."}}
+{"key": "67a5165a930de2189f8c44bb", "verdict": {"label": "pass", "reason": "La respuesta es coherente, deriva adecuadamente al departamento correspondiente, no inventa datos y es breve y educada."}}
+{"key": "04d0a160cd1593310b14cb60", "verdict": {"label": "pass", "reason": "La respuesta es coherente, deriva correctamente a una persona, menciona el 112 ante el peligro y es breve y educada."}}
+{"key": "9410ff91817767675a4c7a0a", "verdict": {"label": "fail", "reason": "La operadora inventa datos concretos de requisitos que no estaban justificados en la llamada."}}
+{"key": "8929570ad0d62716f9d81e45", "verdict": {"label": "pass", "reason": "La respuesta es coherente, guía adecuadamente sobre el registro sin inventar datos y es breve y educada."}}
+{"key": "2fb3f9c07ad947e56f05323a", "verdict": {"label": "pass", "reason": "La respuesta es coherente, deriva adecuadamente guiando en el trámite y muestra empatía sin inventar datos."}}
+{"key": "13693781253567459e73760e", "verdict": {"label": "pass", "reason": "La respuesta es coherente, guía adecuadamente sobre el empadronamiento, no inventa datos y es breve y educada."}}

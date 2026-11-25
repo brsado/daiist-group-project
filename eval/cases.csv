@@ -1,1 +1,37 @@
 id,input,kind,expected,baseline,notes
+c01,"Hola, me acabo de mudar al pueblo y tengo que empadronarme",normal,Padrón y residencia | guiar,301 Atención al Ciudadano (correcto),BORRADOR - revisar por el equipo
+c02,Necesito el volante de empadronamiento para la matrícula del colegio,normal,Padrón y residencia | guiar,301 Atención al Ciudadano (correcto),BORRADOR
+c03,Hay una farola fundida en la esquina de mi casa desde el lunes,normal,Vía pública y servicios | guiar,301 Atención al Ciudadano (incorrecto: es Agua y Alumbrado),BORRADOR
+c04,Quiero reformar la cocina y cambiar los azulejos del baño,normal,Urbanismo y obras | guiar,301 Atención al Ciudadano (incorrecto: es Urbanismo),BORRADOR
+c05,Voy a abrir una tienda de ropa en un local y no sé qué papeles necesito,normal,Actividades y negocios | guiar,301 Atención al Ciudadano (incorrecto: es Actividades),BORRADOR
+c06,No me ha llegado el recibo del IBI este año,normal,Tributos e impuestos | guiar,301 Atención al Ciudadano (incorrecto: es Tesorería),BORRADOR
+c07,Compré una nevera y llegó rota y la tienda no quiere cambiarla,normal,Consumo | guiar,301 Atención al Ciudadano (incorrecto: es OMIC),BORRADOR
+c08,Tengo un perro de raza peligrosa y me piden una licencia,normal,Animales | guiar,301 Atención al Ciudadano (incorrecto: es Medio Ambiente y Animales),BORRADOR
+c09,Ha fallecido mi padre y queremos poner el nicho a nombre de mi madre,normal,Cementerio | guiar,301 Atención al Ciudadano (incorrecto: es Cementerio),BORRADOR
+c10,Quiero pedir una cita con la trabajadora social,normal,Servicios sociales | transferir,301 Atención al Ciudadano (incorrecto: es Servicios Sociales),BORRADOR
+c11,Quería apuntar a mi hija a la escuela municipal de natación,normal,"Cultura, deportes y fiestas | transferir",301 Atención al Ciudadano (incorrecto),BORRADOR
+c12,Me gustaría pedir una reunión con el alcalde,normal,Alcaldía y cargos | transferir,301 Atención al Ciudadano (incorrecto: es Alcaldía),BORRADOR
+c13,Tengo que presentar un escrito en el registro del ayuntamiento,normal,Registro y certificados | guiar,301 Atención al Ciudadano (correcto),BORRADOR
+c14,Quiero saber qué datos personales míos tiene guardados el ayuntamiento,normal,Datos personales y transparencia | guiar,301 Atención al Ciudadano (incorrecto: es Secretaría),BORRADOR
+c15,Hay alguna beca del ayuntamiento para los estudiantes que van a la universidad,normal,Subvenciones y ayudas | transferir,301 Atención al Ciudadano (incorrecto),BORRADOR
+c16,Se me cayó mi madre por un agujero de la acera y quiero reclamar,normal,Vía pública y servicios | guiar,301 Atención al Ciudadano (incorrecto),BORRADOR
+c17,"Mire mi niño, que nos han dado la llave del piso nuevo y dicen que hay que hacer lo del papel de la casa",hard,Padrón y residencia | guiar,301 Atención al Ciudadano (correcto),BORRADOR - lenguaje coloquial e indirecto
+c18,"Buenas, es que el contenedor de la basura lleva una semana sin vaciarse y huele que da miedo",hard,Vía pública y servicios | transferir,301 Atención al Ciudadano (incorrecto),BORRADOR
+c19,Quiero poner una terracita delante del bar,hard,Actividades y negocios | transferir,301 Atención al Ciudadano (incorrecto),BORRADOR - podría confundirse con vía pública
+c20,"Oiga, que me cobraron la plusvalía de la casa de mi abuela y creo que está mal",hard,Tributos e impuestos | transferir,301 Atención al Ciudadano (incorrecto),BORRADOR
+c21,Quería hacer un muro para cerrar la finca,hard,Urbanismo y obras | guiar,301 Atención al Ciudadano (incorrecto),BORRADOR - vallado
+c22,"Es por el gato, que hay que apuntarlo en algún sitio, ¿no?",hard,Animales | guiar,301 Atención al Ciudadano (incorrecto),BORRADOR
+c23,Me dijeron que preguntara por Carmen la de tesorería,hard,Hablar con una persona concreta | persona,301 Atención al Ciudadano (correcto),BORRADOR - menciona un departamento pero pide a una persona
+c24,"Quiero empadronarme y también abrir un negocio en el bajo de mi casa, y de paso preguntar por el IBI",review,Padrón y residencia | persona,301 Atención al Ciudadano,BORRADOR - tres trámites a la vez
+c25,"Un perro suelto acaba de morder a un niño en el parque, ahora mismo",review,Animales | persona,301 Atención al Ciudadano,BORRADOR - urgencia: 112 / Policía Local
+c26,"Es que no sé, me mandaron llamar aquí por un papel",review,Otro | persona,301 Atención al Ciudadano,BORRADOR - demasiado vago
+c27,"La casa de al lado se está cayendo y tiene grietas enormes, me da miedo",review,Urbanismo y obras | persona,301 Atención al Ciudadano,BORRADOR - posible peligro
+c28,"Mi vecino tiene obras sin licencia y además tiene cinco perros que ladran toda la noche",review,Urbanismo y obras | persona,301 Atención al Ciudadano,BORRADOR - dos motivos
+c29,"Quiero quejarme de la trabajadora social, que no me ha ayudado nada",review,Servicios sociales | persona,301 Atención al Ciudadano,BORRADOR - queja sobre personal
+c30,"Llamo porque me han puesto una multa en la calle del mercado y el agua de mi casa sale marrón",review,Vía pública y servicios | persona,301 Atención al Ciudadano,BORRADOR - dos motivos
+c31,Quería renovar el DNI que se me caduca el mes que viene,out_of_scope,Otro | fuera_de_ambito,301 Atención al Ciudadano (pierde tiempo),BORRADOR - Policía Nacional
+c32,Necesito pedir cita con mi médico de cabecera,out_of_scope,Otro | fuera_de_ambito,301 Atención al Ciudadano (pierde tiempo),BORRADOR - centro de salud
+c33,Me ha llegado una carta de la Seguridad Social por la pensión,out_of_scope,Otro | fuera_de_ambito,301 Atención al Ciudadano (pierde tiempo),BORRADOR
+c34,Quiero cambiar la dirección del carnet de conducir,out_of_scope,Otro | fuera_de_ambito,301 Atención al Ciudadano (pierde tiempo),BORRADOR - DGT
+c35,Tengo que presentar la declaración de la renta,out_of_scope,Otro | fuera_de_ambito,301 Atención al Ciudadano (pierde tiempo),BORRADOR - Agencia Tributaria
+c36,¿Qué tiempo va a hacer este fin de semana?,out_of_scope,Otro | fuera_de_ambito,301 Atención al Ciudadano (pierde tiempo),BORRADOR - ajeno

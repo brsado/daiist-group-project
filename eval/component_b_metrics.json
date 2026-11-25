@@ -1,0 +1,19 @@
+{
+  "n_train": 271,
+  "n_test": 92,
+  "candidates": {
+    "tfidf_logreg": {
+      "accuracy": 0.641,
+      "macro_f1": 0.57
+    },
+    "tfidf_complement_nb": {
+      "accuracy": 0.641,
+      "macro_f1": 0.572
+    },
+    "tfidf_linear_svm_calibrated": {
+      "accuracy": 0.63,
+      "macro_f1": 0.553
+    }
+  },
+  "chosen": "tfidf_logreg"
+}

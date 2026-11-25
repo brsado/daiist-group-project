@@ -20,6 +20,15 @@ NOISE_MULTIPLE = 2     # ...and this many times the PSI expected by chance (psi_
 WINDOW = 100           # the drift check looks at the last WINDOW requests...
 MIN_WINDOW = 20        # ...and stays silent with fewer than this
 THUMBS_DOWN_ALERT = 0.4  # PLACEHOLDER: alert when this share of rated requests is 👎
+AGREEMENT_ALERT = 0.6    # PLACEHOLDER: alert when the auditor agrees with the router on fewer than this share of calls
+
+# Which features can fire the drift alert, and in which direction ("both", or "down": only when the
+# live mean is below the reference mean). The others are still logged and shown with their PSI.
+#   share_spanish_words - callers in another language: the auditor was trained on Spanish only.
+#   auditor_confidence  - inputs unlike the training data; only a DROP matters (more confidence is fine).
+# Not watched: n_words (normal phrasing varies a lot), router_self_confidence (Gemini says 0.95-1.0
+# almost always, so its PSI swings on tiny changes), p_router_category / agreement (quality signals, not drift).
+DRIFT_FEATURES = {"share_spanish_words": "both", "auditor_confidence": "down"}
 
 
 def _bin(values: np.ndarray, reference: np.ndarray, bins: int) -> np.ndarray:
@@ -83,8 +92,13 @@ def drift(reference: pd.DataFrame, current: pd.DataFrame) -> pd.DataFrame:
             value = psi(reference[feature], current[feature])
             noise = psi_noise(reference[feature].notna().sum(), max(current[feature].notna().sum(), 1))
             threshold = max(PSI_ALERT, NOISE_MULTIPLE * noise)
-            rows.append({"feature": feature, "psi": round(value, 3), "threshold": round(threshold, 3), "alert": bool(value > threshold)})
-    return pd.DataFrame(rows, columns=["feature", "psi", "threshold", "alert"])
+            direction = DRIFT_FEATURES.get(feature)
+            fires = direction is not None and value > threshold
+            if direction == "down":
+                fires = fires and current[feature].mean() < reference[feature].mean()
+            rows.append({"feature": feature, "watched": direction or "no", "psi": round(value, 3),
+                         "threshold": round(threshold, 3), "alert": bool(fires)})
+    return pd.DataFrame(rows, columns=["feature", "watched", "psi", "threshold", "alert"])
 
 
 def live_features(logs: pd.DataFrame) -> pd.DataFrame:
@@ -103,8 +117,10 @@ def quality(logs: pd.DataFrame, freq: str = "h") -> pd.DataFrame:
         "share sent to review": df["review"].astype(float).resample(freq).mean(),
         "share 👎 (of rated)": (rated < 0).astype(float).resample(freq).mean(),
     })
-    if "f_confidence" in df:
-        signals["mean confidence"] = df["f_confidence"].resample(freq).mean()
+    if "f_agreement" in df:
+        signals["share router-auditor agreement"] = df["f_agreement"].resample(freq).mean()
+    if "f_p_router_category" in df:
+        signals["mean P(router category)"] = df["f_p_router_category"].resample(freq).mean()
     long = signals.reset_index(names="time").melt("time", var_name="signal", value_name="value")
     return long.dropna()
 
@@ -118,6 +134,7 @@ def summary(logs: pd.DataFrame) -> pd.DataFrame:
         "sent to review": f"{logs['review'].mean():.0%}",
         "rated 👍/👎": len(rated),
         "share 👎 (of rated)": f"{(rated < 0).mean():.0%}" if len(rated) else "-",
+        "router-auditor agreement": f"{logs['f_agreement'].mean():.0%}" if "f_agreement" in logs else "-",
         "median latency (s)": round(float(logs["latency_s"].median()), 2),
         "mean cost per request (€)": round(float(logs["cost_eur"].mean()), 5),
         "total cost (€)": round(float(logs["cost_eur"].sum()), 4),
@@ -133,7 +150,18 @@ def alerts(logs: pd.DataFrame, reference: pd.DataFrame | None) -> list[str]:
         report = drift(reference, live_features(window))
         for row in report[report["alert"]].itertuples():
             fired.append(f"Drift in `{row.feature}`: PSI {row.psi} > {row.threshold} over the last {len(window)} requests.")
+    if "f_agreement" in window and len(window) >= MIN_WINDOW and window["f_agreement"].mean() < AGREEMENT_ALERT:
+        fired.append(f"The auditor agrees with the router on only {window['f_agreement'].mean():.0%} of the last {len(window)} calls (< {AGREEMENT_ALERT:.0%}).")
     rated = window["feedback"].dropna().astype(float) if not window.empty else pd.Series(dtype=float)
     if len(rated) >= MIN_WINDOW and (rated < 0).mean() > THUMBS_DOWN_ALERT:
         fired.append(f"{(rated < 0).mean():.0%} of the last {len(rated)} rated requests are 👎 (> {THUMBS_DOWN_ALERT:.0%}).")
     return fired
+
+
+def by_category(logs: pd.DataFrame) -> pd.DataFrame:
+    """Calls per router category, split by whether they went to review."""
+    if logs.empty:
+        return pd.DataFrame(columns=["category", "calls", "reviewed"])
+    cats = logs["outputs"].map(lambda o: (o or {}).get("component_a", {}).get("category", "?"))
+    table = pd.DataFrame({"category": cats, "reviewed": logs["review"].map({True: "review", False: "auto"})})
+    return table.value_counts().rename("calls").reset_index()

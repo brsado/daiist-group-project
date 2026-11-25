@@ -1,0 +1,364 @@
+text,categoria,source,split
+Somos la comisión de fiestas y queremos tirar fuegos artificiales en la fiesta del barrio,Actividades y negocios,moysi_suites,test
+Tengo un bar y quiero poner mesas fuera,Actividades y negocios,moysi_suites,test
+Voy a abrir una peluquería en un local,Actividades y negocios,moysi_suites,test
+"Me quedo con el bar de mi tío, un traspaso",Actividades y negocios,moysi_suites,test
+Es para poner la terraza del bar,Actividades y negocios,moysi_suites,test
+Quiero abrir un bar nuevo en un local vacío,Actividades y negocios,moysi_suites,test
+Quería dejarle un recado al teniente de alcalde,Alcaldía y cargos,team,test
+Quiero pedir una cita con el alcalde para un asunto del barrio,Alcaldía y cargos,team,test
+Mi perro murió la semana pasada y quiero darlo de baja,Animales,moysi_suites,test
+Hay unos gatos callejeros en el solar de al lado,Animales,team,test
+Quiero censar a mi gato,Animales,team,test
+Es para la licencia de mi rottweiler,Animales,moysi_suites,test
+"El nicho está a nombre de mi padre, que murió el año pasado, y quiero ponerlo a mi nombre",Cementerio,moysi_suites,test
+Ha fallecido mi padre y hay que enterrarlo,Cementerio,moysi_suites,test
+Quería trasladar los restos de mi abuela a otro nicho,Cementerio,team,test
+Compré un móvil y vino roto y la tienda no me lo cambia,Consumo,team,test
+"Hola, la compañía de la luz me ha cobrado de más tres meses seguidos y quiero reclamar. Estoy empadronado en Valdeolmo",Consumo,moysi_suites,test
+Me han cobrado de más en el gimnasio,Consumo,moysi_suites,test
+Quiero reservar la pista de pádel municipal,"Cultura, deportes y fiestas",team,test
+Dónde se compran las entradas del concierto de la plaza,"Cultura, deportes y fiestas",team,test
+Cuál es el horario de la biblioteca,"Cultura, deportes y fiestas",team,test
+Hola es para inscribirme en el curso de pintura del ayuntamiento,"Cultura, deportes y fiestas",team,test
+Cómo pido ver el expediente de contratación de la obra de la plaza,Datos personales y transparencia,team,test
+Quiero que el ayuntamiento borre mis datos personales,Datos personales y transparencia,moysi_suites,test
+Quiero ver el informe del técnico sobre la obra de la plaza,Datos personales y transparencia,moysi_suites,test
+Quiero poner una reclamación porque la web del ayuntamiento no se puede usar con el lector de pantalla,Datos personales y transparencia,moysi_suites,test
+Quiero que borren mis datos,Datos personales y transparencia,moysi_suites,test
+Quiero saber cómo va la licencia de obra que pedí en marzo,Datos personales y transparencia,moysi_suites,test
+Quiero saber qué datos tiene el ayuntamiento sobre mí y de dónde los ha sacado,Datos personales y transparencia,moysi_suites,test
+Quiero que me den el bando en un formato que pueda leer con el lector de pantalla,Datos personales y transparencia,moysi_suites,test
+Páseme con Carmen la de urbanismo,Hablar con una persona concreta,team,test
+Busco a la chica del registro que me ayudó la semana pasada,Hablar con una persona concreta,team,test
+Quiero hablar con el técnico que lleva mi expediente,Hablar con una persona concreta,team,test
+Me ha llegado una carta de Hacienda y no la entiendo,Otro,team,test
+Necesito cambiar la dirección en el carnet de conducir,Otro,team,test
+Quería información de la matrícula del instituto,Otro,team,test
+Quiero hacer la declaración de la renta,Otro,team,test
+Quiero empadronarme,Padrón y residencia,moysi_suites,test
+Quiero un volante de empadronamiento,Padrón y residencia,moysi_suites,test
+Me mudé de calle dentro del pueblo y tengo que cambiar la dirección,Padrón y residencia,team,test
+Soy extranjero y me han dicho que tengo que renovar mi inscripción en el padrón,Padrón y residencia,moysi_suites,test
+"Queremos casarnos por lo civil en el ayuntamiento, pedir fecha para la boda",Registro y certificados,moysi_suites,test
+Quiero poner una queja por el mal trato que recibí en una oficina del ayuntamiento,Registro y certificados,moysi_suites,test
+"Queremos crear una asociación cultural nueva, redactar los estatutos y todo eso",Registro y certificados,moysi_suites,test
+Quiero recurrir una resolución del ayuntamiento que me denegó una cosa,Registro y certificados,moysi_suites,test
+Me han pedido que aporte unos documentos que faltan a un expediente que tengo abierto,Registro y certificados,moysi_suites,test
+Mi pareja y yo nos queremos inscribir como pareja de hecho,Registro y certificados,moysi_suites,test
+Me dijeron que en el ayuntamiento dan comida a familias que lo necesitan,Servicios sociales,team,test
+Busco ayuda porque me han cortado la luz y tengo niños pequeños,Servicios sociales,team,test
+Me han dicho que pida el grado de dependencia para mi abuela,Servicios sociales,team,test
+Mi madre es mayor y ya no puede valerse sola en casa,Servicios sociales,team,test
+Nuestro club deportivo quiere pedir una subvención,Subvenciones y ayudas,team,test
+Hay ayudas para rehabilitar la fachada de la casa,Subvenciones y ayudas,team,test
+Quiero solicitar la subvención de este año para el club de fútbol,Subvenciones y ayudas,moysi_suites,test
+Hay alguna beca del ayuntamiento para estudiantes universitarios,Subvenciones y ayudas,team,test
+El ayuntamiento me debe una factura y necesito un certificado de esa deuda,Tributos e impuestos,moysi_suites,test
+El ayuntamiento me debe dinero,Tributos e impuestos,moysi_suites,test
+Quería pagar un recibo atrasado,Tributos e impuestos,team,test
+Quiero pedir la bonificación del IBI por familia numerosa,Tributos e impuestos,moysi_suites,test
+Me ha llegado una multa de tráfico y quiero recurrirla,Tributos e impuestos,team,test
+"Quiero saber qué puedo construir en un terreno, me han dicho que pida la cédula urbanística",Urbanismo y obras,moysi_suites,test
+"Quiero dividir mi casa en dos pisos, cada uno con su escritura",Urbanismo y obras,moysi_suites,test
+"Hola, quiero vallar mis plataneras",Urbanismo y obras,moysi_suites,test
+Quiero cerrar mi finca,Urbanismo y obras,moysi_suites,test
+Voy a levantar una planta más encima de mi casa,Urbanismo y obras,moysi_suites,test
+Se me ha caído un trozo del muro de la finca y quiero repararlo,Urbanismo y obras,moysi_suites,test
+"Voy a ampliar la casa, hacer una habitación nueva",Urbanismo y obras,moysi_suites,test
+He acabado la obra y quiero ocupar la vivienda,Urbanismo y obras,moysi_suites,test
+Voy a poner un cobertizo en la finca para guardar el tractor,Urbanismo y obras,moysi_suites,test
+Quiero dividir una finca en dos para repartirla entre mis hijos,Urbanismo y obras,moysi_suites,test
+He terminado la casa nueva y necesito el papel de primera ocupación,Urbanismo y obras,moysi_suites,test
+Quiero enganchar mi casa al alcantarillado,Urbanismo y obras,moysi_suites,test
+Se me cayó un trozo del muro de la finca y quiero arreglarlo,Urbanismo y obras,moysi_suites,test
+Quiero hacer una vivienda en el garaje de casa,Urbanismo y obras,moysi_suites,test
+Voy a hacer una obra en mi casa,Urbanismo y obras,moysi_suites,test
+Quiero cambiar las ventanas de mi piso,Urbanismo y obras,moysi_suites,test
+Quiero dar de alta la luz en mi casa nueva,Urbanismo y obras,moysi_suites,test
+Vivo en una zona de aparcamiento limitado y quiero la tarjeta de residente,Vía pública y servicios,moysi_suites,test
+"El de la casa de al lado está levantando una planta sin licencia, quiero ponerlo en conocimiento del ayuntamiento",Vía pública y servicios,moysi_suites,test
+Queremos casarnos por lo civil en el ayuntamiento,Vía pública y servicios,moysi_suites,test
+No tengo agua desde esta mañana en casa,Vía pública y servicios,moysi_suites,test
+Quiero poner unas mesas del bar en la acera,Vía pública y servicios,moysi_suites,test
+Quiero pedir plaza en la guardería municipal,Vía pública y servicios,moysi_suites,test
+"Buenas, quiero denunciar unos vertidos en el barranco",Vía pública y servicios,moysi_suites,test
+Quiero avisar de que hay un bache enorme en mi calle desde hace semanas,Vía pública y servicios,moysi_suites,test
+Queremos hacernos pareja de hecho,Vía pública y servicios,moysi_suites,test
+Quiero darme de alta en el servicio municipal de recogida de basura de mi casa nueva,Vía pública y servicios,moysi_suites,test
+Quiero sacar el contador del agua a la fachada para que lo lean desde fuera,Vía pública y servicios,moysi_suites,test
+Necesito un certificado de matrimonio para un papeleo,Vía pública y servicios,moysi_suites,test
+"Me caí por una acera rota y me rompí la muñeca, quiero que el ayuntamiento me indemnice",Vía pública y servicios,moysi_suites,test
+"Me caí por una acera rota y me rompí la muñeca, quiero que el ayuntamiento me pague",Vía pública y servicios,moysi_suites,test
+"Quiero denunciar al vecino de arriba, que pone la música a todo volumen todas las noches",Vía pública y servicios,moysi_suites,test
+"Me quedo con el bar de mi tío, es un traspaso",Actividades y negocios,moysi_suites,train
+Necesito cortar la calle para una mudanza el sábado,Actividades y negocios,moysi_suites,train
+Quiero montar un negocio,Actividades y negocios,moysi_suites,train
+Quiero poner unas mesas en la calle delante de mi bar,Actividades y negocios,moysi_suites,train
+Es para el traspaso de una tienda,Actividades y negocios,moysi_suites,train
+El bar de abajo tiene una terraza que hace un ruido tremendo hasta las dos,Actividades y negocios,moysi_suites,train
+Voy a abrir una tienda de ropa,Actividades y negocios,moysi_suites,train
+Voy a abrir un bar,Actividades y negocios,moysi_suites,train
+Es sobre la licencia de mi negocio,Actividades y negocios,moysi_suites,train
+Quiero abrir un bar,Actividades y negocios,moysi_suites,train
+Voy a abrir una tienda de ropa en Valdeolmo,Actividades y negocios,moysi_suites,train
+Quiero pedir la autorización para vender en el mercadillo,Actividades y negocios,moysi_suites,train
+Voy a cerrar mi tienda y quiero renunciar a la licencia de actividad,Actividades y negocios,moysi_suites,train
+"Solo quiero saber si en este local puedo poner un taller, todavía no voy a abrirlo",Actividades y negocios,moysi_suites,train
+Tengo un bar y quiero poner unas mesas en la acera,Actividades y negocios,moysi_suites,train
+Quiero cerrar la terraza de mi casa con cristal,Actividades y negocios,moysi_suites,train
+Voy a cerrar mi tienda y quiero darla de baja,Actividades y negocios,moysi_suites,train
+Soy de la asociación de vecinos y queremos reunirnos con la alcaldesa,Alcaldía y cargos,team,train
+Quiero quejarme directamente al alcalde,Alcaldía y cargos,team,train
+Necesito hablar con el concejal de deportes,Alcaldía y cargos,team,train
+Me gustaría hablar con el alcalde,Alcaldía y cargos,team,train
+Quería hablar con algún concejal sobre el problema de la plaza,Alcaldía y cargos,team,train
+Páseme con la concejala de urbanismo por favor,Alcaldía y cargos,team,train
+Me pone con el gabinete de alcaldía,Alcaldía y cargos,team,train
+Hola es para pedir audiencia con el alcalde,Alcaldía y cargos,team,train
+Tengo un pitbull y necesito la licencia,Animales,moysi_suites,train
+Quiero censar a mi perro en el ayuntamiento,Animales,moysi_suites,train
+Hay un perro abandonado en mi calle desde hace tres días,Animales,moysi_suites,train
+Hay un perro que ladra toda la noche en el piso de al lado,Animales,team,train
+El perro del vecino ladra toda la noche y no nos deja dormir,Animales,moysi_suites,train
+Se ha perdido mi perro,Animales,team,train
+Un perro suelto acaba de morder a mi hijo en el parque,Animales,moysi_suites,train
+Tengo un rottweiler y necesito la licencia,Animales,team,train
+Tengo un pitbull y me dicen que necesito una licencia,Animales,moysi_suites,train
+Tengo un rottweiler y me dicen que necesito una licencia del ayuntamiento,Animales,moysi_suites,train
+A qué hora abre el cementerio,Cementerio,team,train
+Es para una cosa del cementerio,Cementerio,moysi_suites,train
+Ha fallecido mi madre y tenemos que enterrarla en el nicho de la familia,Cementerio,moysi_suites,train
+Queremos llevar los restos de mi abuelo al cementerio de Montealto,Cementerio,moysi_suites,train
+Ha fallecido mi madre y tenemos que enterrarla,Cementerio,moysi_suites,train
+Se murió mi abuelo y queremos saber si hay nicho libre,Cementerio,team,train
+Hay que pagar algo para mantener la tumba,Cementerio,team,train
+"Quiero dar de baja del padrón a mi madre, que ha fallecido",Cementerio,moysi_suites,train
+Quiero renovar la concesión del nicho de mis padres,Cementerio,moysi_suites,train
+Necesito el certificado de defunción de mi marido,Cementerio,moysi_suites,train
+Quiero poner una hoja de reclamaciones a un restaurante,Consumo,team,train
+La compañía del gas me cobra una cosa que no contraté,Consumo,team,train
+"Quiero reclamar a la compañía del teléfono, me cobran un servicio que di de baja",Consumo,moysi_suites,train
+Compré una lavadora y me llegó rota y la tienda no me hace caso,Consumo,moysi_suites,train
+"Quiero reclamar a un taller que me cobró una reparación que no hizo, estoy empadronado en Valdeolmo",Consumo,moysi_suites,train
+"Me han cobrado de más en la luz, estoy empadronado en Valdeolmo",Consumo,moysi_suites,train
+El gimnasio no me deja darme de baja,Consumo,team,train
+Quiero quejarme porque el camión de la basura del ayuntamiento no pasa por mi calle desde hace una semana,Consumo,moysi_suites,train
+"Quiero reclamar a la compañía de teléfono, me siguen cobrando aunque me di de baja",Consumo,moysi_suites,train
+Me vendieron un coche de segunda mano con defectos ocultos,Consumo,team,train
+Quiero inscribirme en un curso de los que organiza el ayuntamiento,"Cultura, deportes y fiestas",moysi_suites,train
+Somos un grupo de música y queremos tocar en las fiestas,"Cultura, deportes y fiestas",team,train
+Quería apuntar a mi hijo a la escuela de fútbol,"Cultura, deportes y fiestas",team,train
+Hola es por la carrera popular del domingo,"Cultura, deportes y fiestas",team,train
+A qué hora abre el pabellón de deportes,"Cultura, deportes y fiestas",team,train
+Necesito el teatro municipal para una actuación del colegio,"Cultura, deportes y fiestas",team,train
+Quiero información de la piscina municipal,"Cultura, deportes y fiestas",team,train
+Quiero alquilar el campo de fútbol para un partido,"Cultura, deportes y fiestas",team,train
+Quería saber si hay campamento de verano para niños,"Cultura, deportes y fiestas",team,train
+Cuándo son las fiestas del pueblo este año,"Cultura, deportes y fiestas",team,train
+Hay clases de baile para mayores,"Cultura, deportes y fiestas",team,train
+Quiero que borren mis datos y que dejen de mandarme cartas del ayuntamiento,Datos personales y transparencia,moysi_suites,train
+"Busco el plano original de mi casa, de cuando se construyó en los años sesenta",Datos personales y transparencia,moysi_suites,train
+La página web del ayuntamiento no es accesible para personas ciegas,Datos personales y transparencia,team,train
+Quiero que borren mis datos de una lista del ayuntamiento,Datos personales y transparencia,team,train
+"Pedí hace más de un mes que me dieran un documento de la web en formato accesible y no me han contestado, quiero reclamar",Datos personales y transparencia,moysi_suites,train
+Quiero ver el contrato que tiene el ayuntamiento con la empresa de la limpieza,Datos personales y transparencia,moysi_suites,train
+Solo quiero avisar de que en la app del ayuntamiento hay un botón que no funciona con el teclado,Datos personales y transparencia,moysi_suites,train
+Quiero consultar cuánto cobra el alcalde según el portal de transparencia,Datos personales y transparencia,team,train
+"Soy ciego y el lector de pantalla no me lee el documento de las tasas que hay en la web del ayuntamiento, quiero que me lo den en un formato que pueda usar",Datos personales y transparencia,moysi_suites,train
+"Tengo una duda sobre cómo usan mis datos, quiero hablar con el delegado de protección de datos",Datos personales y transparencia,moysi_suites,train
+"Voy en silla de ruedas y la rampa de la entrada del centro de salud está rota, no puedo entrar",Datos personales y transparencia,moysi_suites,train
+Es por lo de mis datos,Datos personales y transparencia,moysi_suites,train
+Quiero saber qué datos míos tiene el ayuntamiento,Datos personales y transparencia,team,train
+No puedo ampliar la letra de la web del ayuntamiento,Datos personales y transparencia,moysi_suites,train
+Quiero ejercer mi derecho de acceso a mis datos,Datos personales y transparencia,team,train
+Quiero dar mi opinión sobre la nueva ordenanza de terrazas que están preparando,Datos personales y transparencia,moysi_suites,train
+Tengo mal escrito el apellido en el padrón y quiero corregirlo,Datos personales y transparencia,moysi_suites,train
+"Necesito un certificado del ayuntamiento para el banco, que diga que estoy al corriente",Datos personales y transparencia,moysi_suites,train
+Quiero saber qué datos tienen de mí,Datos personales y transparencia,moysi_suites,train
+Han publicado mi nombre y mi DNI en un tablón y quiero quejarme,Datos personales y transparencia,team,train
+Quiero ver cuánto se gastó el ayuntamiento en las fiestas,Datos personales y transparencia,moysi_suites,train
+Quiero un documento del ayuntamiento,Datos personales y transparencia,moysi_suites,train
+Quiero pedir copia del contrato de la limpieza de calles del ayuntamiento,Datos personales y transparencia,moysi_suites,train
+La página web del ayuntamiento no funciona con mi lector de pantalla,Datos personales y transparencia,moysi_suites,train
+"Quiero poner una reclamación porque la web del ayuntamiento no se puede usar con el lector de pantalla, no he pedido nada antes",Datos personales y transparencia,moysi_suites,train
+No quiero hablar con una máquina quiero una persona,Hablar con una persona concreta,team,train
+Estoy esperando que me llame Pedro de tesorería,Hablar con una persona concreta,team,train
+Me dijeron que preguntara por Juan,Hablar con una persona concreta,team,train
+Hola me pasa con el funcionario que me atendió ayer,Hablar con una persona concreta,team,train
+Que me pongan con una persona que no entiendo nada,Hablar con una persona concreta,team,train
+Quiero hablar con una persona,Hablar con una persona concreta,team,train
+Con la operadora por favor,Hablar con una persona concreta,team,train
+Póngame con alguien de carne y hueso,Hablar con una persona concreta,team,train
+Quiero denunciar un robo en mi casa,Otro,team,train
+Es para el paro me han quitado la prestación,Otro,team,train
+Llamo por la cita de la Seguridad Social,Otro,team,train
+Necesito el certificado de antecedentes penales,Otro,team,train
+Me he equivocado de número perdone,Otro,team,train
+Llamo para vender un seguro al ayuntamiento,Otro,team,train
+Hola buenas qué tiempo va a hacer el fin de semana,Otro,team,train
+Busco trabajo y quería saber si el ayuntamiento contrata,Otro,team,train
+Es para pedir cita en el centro de salud,Otro,team,train
+Quería renovar el DNI,Otro,team,train
+Hola es para preguntar por el autobús que va a la capital,Otro,team,train
+Quiero darme de baja del padrón porque me voy a otro pueblo,Padrón y residencia,team,train
+Me acabo de mudar a Valdeolmo y quiero empadronarme,Padrón y residencia,moysi_suites,train
+Acabo de tener un bebé y quiero empadronarlo,Padrón y residencia,team,train
+Quiero empadronarme en Valdeolmo,Padrón y residencia,moysi_suites,train
+"Hola, quiero empadronarme, me acabo de mudar",Padrón y residencia,moysi_suites,train
+Necesito un certificado de empadronamiento,Padrón y residencia,moysi_suites,train
+Me he cambiado de casa dentro de Valdeolmo y quiero cambiar la dirección en el padrón,Padrón y residencia,moysi_suites,train
+Necesito un volante de empadronamiento para el colegio de mi hija,Padrón y residencia,moysi_suites,train
+Necesito un certificado de convivencia,Padrón y residencia,team,train
+Me hace falta el volante de empadronamiento para el colegio,Padrón y residencia,team,train
+Quiero presentar una instancia general por registro,Registro y certificados,moysi_suites,train
+Necesito compulsar unos documentos,Registro y certificados,team,train
+Soy el presidente de la asociación de vecinos del barrio y queremos inscribirla en el ayuntamiento,Registro y certificados,moysi_suites,train
+Quería pedir una reunión con el concejal de urbanismo,Registro y certificados,moysi_suites,train
+Quiero ver el contrato del ayuntamiento con la empresa de la limpieza,Registro y certificados,moysi_suites,train
+Me he separado y quiero dar de baja la pareja de hecho,Registro y certificados,moysi_suites,train
+Quiero dar un poder a mi hijo para que haga los trámites del ayuntamiento por mí,Registro y certificados,moysi_suites,train
+Tengo que entregar unos papeles que me pidieron de un expediente,Registro y certificados,team,train
+Cómo presento una instancia en el ayuntamiento,Registro y certificados,team,train
+Quería pedir cita previa para el registro,Registro y certificados,team,train
+"Me llegó una notificación electrónica del ayuntamiento, la rechacé sin querer y ahora quiero verla",Registro y certificados,moysi_suites,train
+Necesito un certificado del ayuntamiento de que tengo la licencia de vado,Registro y certificados,moysi_suites,train
+Una tienda me cobró de más y quiero reclamar,Registro y certificados,moysi_suites,train
+Mi novia y yo queremos hacernos pareja de hecho,Registro y certificados,moysi_suites,train
+Quiero pedir un certificado al ayuntamiento de que trabajé en un programa municipal,Registro y certificados,moysi_suites,train
+Quiero presentar un escrito en el registro,Registro y certificados,team,train
+Hola mire quería informarme de la teleasistencia para una persona mayor,Servicios sociales,team,train
+Quería saber cómo va mi expediente de dependencia,Servicios sociales,team,train
+Hola quiero información del centro de mayores,Servicios sociales,team,train
+Necesito una cita con la trabajadora social,Servicios sociales,team,train
+Tengo una situación complicada en casa y necesito hablar con servicios sociales,Servicios sociales,team,train
+Mi vecino vive solo y creo que necesita que alguien vaya a verlo,Servicios sociales,team,train
+Necesito apoyo con un menor que tengo a cargo,Servicios sociales,team,train
+Es por lo de la ayuda de emergencia social,Servicios sociales,team,train
+Quería pedir la ayuda a domicilio para mi padre,Servicios sociales,team,train
+Estoy en paro y no tengo para pagar el alquiler este mes,Servicios sociales,team,train
+Quiero pedir el informe social para el colegio de mi hijo,Servicios sociales,team,train
+Tengo que justificar una subvención,Subvenciones y ayudas,moysi_suites,train
+Me concedieron una subvención y tengo que justificarla con las facturas,Subvenciones y ayudas,moysi_suites,train
+Cuándo sale la convocatoria de ayudas para el transporte de estudiantes,Subvenciones y ayudas,team,train
+Tengo que justificar la subvención de la asociación,Subvenciones y ayudas,moysi_suites,train
+"Necesito un certificado de la subvención que me concedió el ayuntamiento el año pasado, me lo pide Hacienda",Subvenciones y ayudas,moysi_suites,train
+"Me concedieron una subvención en abril y todavía no me han pagado, me dicen que falta la ficha de tercero",Subvenciones y ayudas,moysi_suites,train
+"Soy el presidente de la asociación de vecinos, nos dieron una subvención para las fiestas y tengo que justificarla",Subvenciones y ayudas,moysi_suites,train
+Quería saber si ya pagaron la ayuda de natalidad,Subvenciones y ayudas,team,train
+Tengo un pequeño negocio y quería saber si hay subvenciones para autónomos,Subvenciones y ayudas,team,train
+Quería saber si hay subvenciones para asociaciones culturales,Subvenciones y ayudas,team,train
+Quiero pedir la ayuda para comprar libros de texto,Subvenciones y ayudas,team,train
+Es por la justificación de la subvención que nos dieron a la asociación,Subvenciones y ayudas,team,train
+Hay ayudas para poner placas solares en casa,Subvenciones y ayudas,team,train
+El ayuntamiento me debe una factura de hace meses y necesito un certificado de esa deuda para el banco,Tributos e impuestos,moysi_suites,train
+"Me cobraron una plusvalía que no me tocaba, ya pasó el plazo de recurrir y quiero que la anulen",Tributos e impuestos,moysi_suites,train
+Quiero domiciliar el impuesto del coche,Tributos e impuestos,team,train
+Quiero domiciliar los recibos del ayuntamiento en mi banco,Tributos e impuestos,moysi_suites,train
+Pagué dos veces el mismo recibo y quiero que me devuelvan el dinero,Tributos e impuestos,moysi_suites,train
+"Me tienen que devolver dinero de una tasa y ahora me ha llegado el IBI, quiero que me lo descuenten",Tributos e impuestos,moysi_suites,train
+"Me acaba de llegar el recibo de la basura y no estoy de acuerdo, quiero recurrirlo",Tributos e impuestos,moysi_suites,train
+No me ha llegado el recibo del IBI,Tributos e impuestos,team,train
+El ayuntamiento me debe dinero y quiero un certificado de esa deuda,Tributos e impuestos,moysi_suites,train
+Necesito un certificado de que estoy al corriente de pago con el ayuntamiento,Tributos e impuestos,moysi_suites,train
+Me han cobrado dos veces la basura,Tributos e impuestos,team,train
+"Me cobraron una plusvalía que no me correspondía, ya pasó el plazo de recurrir y quiero que la anulen",Tributos e impuestos,moysi_suites,train
+Quiero fraccionar el pago del IBI de este año,Tributos e impuestos,moysi_suites,train
+Es por la plusvalía de la casa que heredé,Tributos e impuestos,team,train
+Hay un muro de una casa abandonada que se va a caer a la calle en cualquier momento,Urbanismo y obras,moysi_suites,train
+Quiero poner un invernadero,Urbanismo y obras,moysi_suites,train
+Quiero tirar la casa vieja entera que tengo en la finca y hacer una nueva,Urbanismo y obras,moysi_suites,train
+Quiero hacer una reforma en el baño,Urbanismo y obras,moysi_suites,train
+Necesito traer la luz a la finca para el riego y los animales,Urbanismo y obras,moysi_suites,train
+Quiero pedir que declaren en ruina una casa vieja de la familia,Urbanismo y obras,moysi_suites,train
+Mi arquitecto me ha dicho que presente una declaración responsable en materia urbanística,Urbanismo y obras,moysi_suites,train
+Necesito un certificado de antigüedad,Urbanismo y obras,moysi_suites,train
+"Buenos días, quiero segregar una parcela",Urbanismo y obras,moysi_suites,train
+"Buenos días, quiero poner un muro alrededor de mi solar",Urbanismo y obras,moysi_suites,train
+Quiero tirar un tabique de la cocina,Urbanismo y obras,moysi_suites,train
+Quiero poner un vado en la entrada de mi garaje,Urbanismo y obras,moysi_suites,train
+En el ayuntamiento me han dicho que presente la autorización de uso de la edificación del decreto once del noventa y siete,Urbanismo y obras,moysi_suites,train
+Quiero vallar un solar que tengo,Urbanismo y obras,moysi_suites,train
+Quiero estrenar una casa que era de mi padre,Urbanismo y obras,moysi_suites,train
+Quiero saber si puedo abrir una peluquería en mi local,Urbanismo y obras,moysi_suites,train
+Necesito el certificado de antigüedad de mi casa,Urbanismo y obras,moysi_suites,train
+He comprado una casa con una obra empezada y quiero poner la licencia a mi nombre,Urbanismo y obras,moysi_suites,train
+Voy a montar un invernadero en mi finca,Urbanismo y obras,moysi_suites,train
+Me han mandado limpiar un solar que tengo lleno de maleza,Urbanismo y obras,moysi_suites,train
+"Buenas, es para la acometida del alcantarillado",Urbanismo y obras,moysi_suites,train
+Necesito el certificado de alineaciones y rasantes para construir,Urbanismo y obras,moysi_suites,train
+"Hola, quería cortar unos árboles de mi finca",Urbanismo y obras,moysi_suites,train
+Quiero reformar la cocina de mi casa,Urbanismo y obras,moysi_suites,train
+Solo quiero saber si puedo poner una peluquería en mi local,Urbanismo y obras,moysi_suites,train
+Tengo que levantar un muro en mi finca,Urbanismo y obras,moysi_suites,train
+Quiero levantar una planta más en mi casa,Urbanismo y obras,moysi_suites,train
+Necesito un certificado de que una obra antigua de mi casa ya está prescrita,Urbanismo y obras,moysi_suites,train
+Quiero partir mi finca para darle un trozo a mi hijo,Urbanismo y obras,moysi_suites,train
+"Es sobre mi licencia de obras, tengo que hacer algo con ella pero no sé qué",Urbanismo y obras,moysi_suites,train
+"Quiero nivelar un trozo de la finca, mover algo de tierra, sin levantar ningún muro",Urbanismo y obras,moysi_suites,train
+Voy a instalar placas fotovoltaicas en mi nave,Urbanismo y obras,moysi_suites,train
+Quiero vallar mi finca,Urbanismo y obras,moysi_suites,train
+Quiero conectar mi casa nueva a la red de alcantarillado,Urbanismo y obras,moysi_suites,train
+Quiero poner un invernadero en la finca,Urbanismo y obras,moysi_suites,train
+Es sobre el vado de mi casa,Urbanismo y obras,moysi_suites,train
+La casa vieja de mi abuela se está cayendo y quiero que el ayuntamiento la declare en ruina,Urbanismo y obras,moysi_suites,train
+Quiero convertir el local de abajo en una vivienda,Urbanismo y obras,moysi_suites,train
+"Hola, quería poner unas placas solares",Urbanismo y obras,moysi_suites,train
+Terminé una vivienda y necesito darle de alta la luz y el agua,Urbanismo y obras,moysi_suites,train
+"Hola, quería un vado para mi garaje",Urbanismo y obras,moysi_suites,train
+"Quiero quitar el vado, ya no tengo coche",Urbanismo y obras,moysi_suites,train
+Quiero poner una caseta desmontable en mi terreno durante unos meses y luego quitarla,Urbanismo y obras,moysi_suites,train
+La finca la partió mi padre hace treinta años sin licencia y ahora necesito un papel que diga que ya prescribió,Urbanismo y obras,moysi_suites,train
+Tengo una licencia de obra concedida y quiero modificarla porque cambié el proyecto,Urbanismo y obras,moysi_suites,train
+"Tengo una licencia de obra y se me acaba el plazo, la obra no está terminada",Urbanismo y obras,moysi_suites,train
+Quiero poner placas solares en el tejado de mi casa,Urbanismo y obras,moysi_suites,train
+He comprado una casa que ya tiene vado y quiero ponerlo a mi nombre,Urbanismo y obras,moysi_suites,train
+Se me caduca la licencia de obra,Urbanismo y obras,moysi_suites,train
+Tengo una palmera con picudo y quiero cortarla,Urbanismo y obras,moysi_suites,train
+He terminado la casa y quiero mudarme ya,Urbanismo y obras,moysi_suites,train
+Es para renovar la cartilla de taxista,Vía pública y servicios,moysi_suites,train
+No puedo usar la web del ayuntamiento con mi lector de pantalla,Vía pública y servicios,moysi_suites,train
+Mi padre va en silla de ruedas y queremos la tarjeta de aparcamiento por discapacidad,Vía pública y servicios,moysi_suites,train
+Es para cortar la calle para una mudanza,Vía pública y servicios,moysi_suites,train
+Quiero sacar la tarjeta de armas para una escopeta de aire comprimido,Vía pública y servicios,moysi_suites,train
+Quiero darme de baja del gimnasio municipal,Vía pública y servicios,moysi_suites,train
+Quiero apuntarme a la ruta de la orgánica para que me recojan los restos de comida,Vía pública y servicios,moysi_suites,train
+"Es para una réplica de airsoft, la tarjeta de armas",Vía pública y servicios,moysi_suites,train
+Tengo movilidad reducida y quiero que me pinten una plaza reservada delante de mi casa,Vía pública y servicios,moysi_suites,train
+Quiero sacarme la licencia de caza y el permiso para la escopeta,Vía pública y servicios,moysi_suites,train
+Una farola de mi calle lleva un mes fundida,Vía pública y servicios,moysi_suites,train
+"Es por el contador del agua, que está parado",Vía pública y servicios,moysi_suites,train
+Nos queremos casar por lo civil en el ayuntamiento,Vía pública y servicios,moysi_suites,train
+"Necesito ayuda a domicilio para mi madre, que ya no puede sola",Vía pública y servicios,moysi_suites,train
+Quiero que no me aparquen nunca delante de la puerta del garaje,Vía pública y servicios,moysi_suites,train
+Me atendieron fatal en el registro esta mañana y quiero quejarme,Vía pública y servicios,moysi_suites,train
+Es para lo del permiso del taxi,Vía pública y servicios,moysi_suites,train
+Tengo que meter una grúa para la obra de mi casa y cortar la calle una mañana,Vía pública y servicios,moysi_suites,train
+Un bache enorme me ha reventado una rueda y quiero que el ayuntamiento me pague el arreglo,Vía pública y servicios,moysi_suites,train
+El vecino me ha rayado el coche con el suyo y quiero que me lo pague,Vía pública y servicios,moysi_suites,train
+Quiero pedir permiso para quemar rastrojos en mi finca,Vía pública y servicios,moysi_suites,train
+"Hola, mi pareja y yo queremos casarnos por lo civil en el ayuntamiento",Vía pública y servicios,moysi_suites,train
+"Quiero comprar una licencia de taxi, ¿cómo se hace?",Vía pública y servicios,moysi_suites,train
+Es para la tarjeta de aparcamiento por discapacidad,Vía pública y servicios,moysi_suites,train
+Mi madre tiene reconocida la discapacidad y quiero pedirle la tarjeta de aparcamiento,Vía pública y servicios,moysi_suites,train
+Me he comprado una carabina de aire comprimido y me dicen que necesito una tarjeta del ayuntamiento,Vía pública y servicios,moysi_suites,train
+Quiero sacarme la cartilla para trabajar de taxista,Vía pública y servicios,moysi_suites,train
+Tengo una mudanza el sábado y necesito cortar la calle unas horas para el camión,Vía pública y servicios,moysi_suites,train
+Quiero la tarjeta de aparcamiento de minusválido pero todavía no tengo reconocida la discapacidad,Vía pública y servicios,moysi_suites,train
+Me he comprado una casa y quiero dar de alta el agua a mi nombre,Vía pública y servicios,moysi_suites,train
+Necesito la tarjeta de armas para una pistola de balines,Vía pública y servicios,moysi_suites,train
+Me caí por una acera rota y quiero reclamar,Vía pública y servicios,moysi_suites,train
+Me mudo el sábado y necesito cortar la calle para el camión,Vía pública y servicios,moysi_suites,train
+Es para pedir fecha para la boda civil,Vía pública y servicios,moysi_suites,train
+"Me caí por una acera rota en la calle Marqués del Muni y me rompí la muñeca, quiero que el ayuntamiento me indemnice",Vía pública y servicios,moysi_suites,train
+Quiero sacarme el permiso municipal de conductor de taxi,Vía pública y servicios,moysi_suites,train
+Quiero usar un local municipal un día para una reunión de la asociación,Vía pública y servicios,moysi_suites,train
+Me caí por una acera rota y quiero que me indemnicen,Vía pública y servicios,moysi_suites,train
+Quiero sacarme el permiso de conductor de taxi,Vía pública y servicios,moysi_suites,train
+Se me caduca el permiso de conductor de taxi y tengo que renovarlo,Vía pública y servicios,moysi_suites,train
+Hay un bache enorme en mi calle desde hace semanas y quiero avisar,Vía pública y servicios,moysi_suites,train
+"Me ha llegado una factura de agua altísima, creo que el contador marca de más",Vía pública y servicios,moysi_suites,train
+He perdido la tarjeta azul de aparcamiento y necesito otra,Vía pública y servicios,moysi_suites,train
+Hay un cable de la luz caído en medio de la calle echando chispas ahora mismo,Vía pública y servicios,moysi_suites,train
+"Solo quiero avisar de que hay un bache muy grande en mi calle, no me ha pasado nada",Vía pública y servicios,moysi_suites,train
+Quiero apuntar a mi hijo a la escuela de música del ayuntamiento,Vía pública y servicios,moysi_suites,train

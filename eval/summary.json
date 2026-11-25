@@ -1,0 +1,80 @@
+{
+  "component_a": {
+    "category_accuracy_all": 1.0,
+    "category_macro_f1_all": 1.0,
+    "category_accuracy_normal_hard": 1.0,
+    "action_accuracy_all": 0.778
+  },
+  "component_b": {
+    "held_out": {
+      "n_train": 271,
+      "n_test": 92,
+      "candidates": {
+        "tfidf_logreg": {
+          "accuracy": 0.641,
+          "macro_f1": 0.57
+        },
+        "tfidf_complement_nb": {
+          "accuracy": 0.641,
+          "macro_f1": 0.572
+        },
+        "tfidf_linear_svm_calibrated": {
+          "accuracy": 0.63,
+          "macro_f1": 0.553
+        }
+      },
+      "chosen": "tfidf_logreg"
+    },
+    "category_accuracy_on_cases": 0.75,
+    "router_errors_normal_hard": 0,
+    "router_errors_caught (recall)": null,
+    "flagged_that_were_errors (precision)": 0.0
+  },
+  "end_to_end": {
+    "by_kind": {
+      "hard": {
+        "cases": 7,
+        "correct": 0.429,
+        "sent_to_review": 0.571,
+        "baseline_switchboard": 0.286
+      },
+      "normal": {
+        "cases": 16,
+        "correct": 0.812,
+        "sent_to_review": 0.188,
+        "baseline_switchboard": 0.188
+      },
+      "out_of_scope": {
+        "cases": 6,
+        "correct": 1.0,
+        "sent_to_review": 0.167,
+        "baseline_switchboard": 0.0
+      },
+      "review": {
+        "cases": 7,
+        "correct": 1.0,
+        "sent_to_review": 0.857,
+        "baseline_switchboard": 0.0
+      }
+    },
+    "product_correct": 0.806,
+    "baseline_switchboard_correct": 0.139,
+    "share_sent_to_review": 0.389,
+    "router_errors_caught_by_product": 0,
+    "router_errors_caught_by_random_10pct_audit (expected)": 0.0
+  },
+  "judge": {
+    "version": "judge-rubric-v1",
+    "pass_rate": 0.861
+  },
+  "cost": {
+    "mean_tokens": 2455.5,
+    "mean_cost_eur": 0.00026,
+    "median_latency_s": 3.99,
+    "p90_latency_s": 32.81,
+    "price_assumption_eur_per_m_tokens": {
+      "input": 0.09,
+      "output": 0.37
+    }
+  }
+}
