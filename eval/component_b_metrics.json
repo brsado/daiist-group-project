@@ -1,19 +1,19 @@
 {
-  "n_train": 271,
-  "n_test": 92,
+  "n_train": 428,
+  "n_test": 142,
   "candidates": {
     "tfidf_logreg": {
-      "accuracy": 0.641,
-      "macro_f1": 0.57
+      "accuracy": 0.725,
+      "macro_f1": 0.71
     },
     "tfidf_complement_nb": {
-      "accuracy": 0.641,
-      "macro_f1": 0.572
+      "accuracy": 0.746,
+      "macro_f1": 0.733
     },
     "tfidf_linear_svm_calibrated": {
-      "accuracy": 0.63,
-      "macro_f1": 0.553
+      "accuracy": 0.746,
+      "macro_f1": 0.728
     }
   },
-  "chosen": "tfidf_logreg"
+  "chosen": "tfidf_complement_nb"
 }

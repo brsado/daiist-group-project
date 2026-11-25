@@ -107,21 +107,29 @@ def live_features(logs: pd.DataFrame) -> pd.DataFrame:
     return logs[columns].tail(WINDOW).rename(columns=lambda c: c[2:])
 
 
-def quality(logs: pd.DataFrame, freq: str = "h") -> pd.DataFrame:
-    """Quality signals per period, in long format (time, signal, value) for a line plot."""
+QUALITY_ROLLING = 10  # each point of the quality chart = the mean over the last 10 requests
+
+
+def quality(logs: pd.DataFrame) -> pd.DataFrame:
+    """Quality signals as a rolling mean over the last QUALITY_ROLLING requests, one point per request.
+
+    Long format (time, signal, value) for a line plot. Rolling over requests (not hours) so the
+    chart has a line even with little traffic, as on the free plan.
+    """
     if logs.empty:
         return pd.DataFrame(columns=["time", "signal", "value"])
-    df = logs.set_index("timestamp")
-    rated = df["feedback"].dropna().astype(float)
-    signals = pd.DataFrame({
-        "share sent to review": df["review"].astype(float).resample(freq).mean(),
-        "share 👎 (of rated)": (rated < 0).astype(float).resample(freq).mean(),
-    })
+    df = logs.sort_values("timestamp").set_index("timestamp")
+    roll = lambda series: series.astype(float).rolling(QUALITY_ROLLING, min_periods=1).mean()
+    signals = pd.DataFrame({"share sent to review": roll(df["review"])})
     if "f_agreement" in df:
-        signals["share router-auditor agreement"] = df["f_agreement"].resample(freq).mean()
+        signals["share router-auditor agreement"] = roll(df["f_agreement"])
     if "f_p_router_category" in df:
-        signals["mean P(router category)"] = df["f_p_router_category"].resample(freq).mean()
+        signals["mean P(router category)"] = roll(df["f_p_router_category"])
     long = signals.reset_index(names="time").melt("time", var_name="signal", value_name="value")
+    rated = df["feedback"].dropna()
+    if len(rated):
+        thumbs = roll(rated.astype(float) < 0).rename("value").reset_index(names="time")
+        long = pd.concat([long, thumbs.assign(signal="share 👎 (of rated)")], ignore_index=True)
     return long.dropna()
 
 
@@ -161,7 +169,7 @@ def alerts(logs: pd.DataFrame, reference: pd.DataFrame | None) -> list[str]:
 def by_category(logs: pd.DataFrame) -> pd.DataFrame:
     """Calls per router category, split by whether they went to review."""
     if logs.empty:
-        return pd.DataFrame(columns=["category", "calls", "reviewed"])
+        return pd.DataFrame(columns=["category", "result", "calls"])
     cats = logs["outputs"].map(lambda o: (o or {}).get("component_a", {}).get("category", "?"))
-    table = pd.DataFrame({"category": cats, "reviewed": logs["review"].map({True: "review", False: "auto"})})
+    table = pd.DataFrame({"category": cats, "result": logs["review"].map({True: "a revisión", False: "validada"})})
     return table.value_counts().rename("calls").reset_index()

@@ -37,7 +37,9 @@ HUMAN_LABELS = ROOT / "eval" / "human_labels.csv"
 B_METRICS = ROOT / "eval" / "component_b_metrics.json"
 JUDGE_CACHE = ROOT / "cache" / "judge.jsonl"
 RANDOM_AUDIT_SHARE = 0.10
-JUDGE_VERSION = "judge-rubric-v1"
+JUDGE_VERSION = "judge-rubric-v2"  # v2: the judge also sees the procedure facts the router could read
+SWEEP = ROOT / "eval" / "threshold_sweep.csv"
+THRESHOLDS = [0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50, 0.60]
 
 JUDGE_PROMPT = """Eres un evaluador estricto de una operadora telefónica automática de un ayuntamiento.
 Te doy lo que dijo el vecino, lo que se esperaba (categoría | acción) y la respuesta de la operadora.
@@ -45,7 +47,8 @@ Te doy lo que dijo el vecino, lo que se esperaba (categoría | acción) y la res
 Rúbrica. La respuesta APRUEBA (pass) solo si cumple las cuatro:
 1. Es coherente con lo que pidió el vecino (no responde a otra cosa).
 2. Deriva bien: guía, transfiere, pasa a una persona o dice que no es del ayuntamiento, según lo esperado.
-3. No inventa datos concretos (plazos, precios, documentos, teléfonos) que no estén justificados.
+3. No inventa datos concretos (plazos, precios, documentos, teléfonos): todo dato concreto tiene que salir de la
+   "Información que tenía la operadora". Si sale de ahí, NO es inventado.
 4. Es breve, educada y comprensible por teléfono.
 Si hay peligro para personas, debe mencionar el 112.
 
@@ -82,15 +85,25 @@ def _judge_cache() -> dict:
     return {r["key"]: r["verdict"] for r in map(json.loads, JUDGE_CACHE.read_text(encoding="utf-8").splitlines())}
 
 
-def judge(case: dict, reply: str) -> dict:
-    key = hashlib.sha256(f"{JUDGE_VERSION}|{case['input']}|{case['expected']}|{reply}".encode()).hexdigest()[:24]
+def router_facts(a: dict) -> str:
+    """What the router could read through its tools for its category: the judge needs it to tell sourced from made up."""
+    info = router.info_categoria(a["category"])
+    procs = [t for t in router.MUNICIPIO["tramites"] if t["categoria"] == a["category"]]
+    lines = [f"Departamento {info.get('departamento')} (ext. {info.get('extension')}), horario {info.get('horario')}."]
+    lines += [f"- {t['nombre']}: {t['resumen']}" for t in procs]
+    return "\n".join(lines)
+
+
+def judge(case: dict, reply: str, facts: str = "") -> dict:
+    key = hashlib.sha256(f"{JUDGE_VERSION}|{case['input']}|{case['expected']}|{reply}|{facts}".encode()).hexdigest()[:24]
     if hit := _judge_cache().get(key):
         return hit
     from google import genai
     from google.genai import types
 
     client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
-    prompt = f"Vecino: «{case['input']}»\nEsperado: {case['expected']}\nRespuesta de la operadora: «{reply}»"
+    prompt = (f"Vecino: «{case['input']}»\nEsperado: {case['expected']}\n"
+              f"Información que tenía la operadora:\n{facts or '(ninguna)'}\nRespuesta de la operadora: «{reply}»")
     try:
         response = router._generate(  # same retries on 503/429 as the router
             client, prompt,
@@ -119,7 +132,7 @@ def main() -> None:
         result = pipeline.run(case["input"])
         a, b = result["outputs"]["component_a"], result["outputs"]["component_b"]
         exp_cat, exp_action = expected_parts(case)
-        verdict = judge(case, a["reply"])
+        verdict = judge(case, a["reply"], router_facts(a))
         rows.append({
             "id": case["id"], "kind": case["kind"].strip().lower(), "input": case["input"],
             "expected_category": exp_cat, "expected_action": exp_action,
@@ -186,6 +199,25 @@ def main() -> None:
         if len(merged):
             summary["judge"]["human_labels"] = len(merged)
             summary["judge"]["agreement_with_humans"] = round((merged["label"].str.strip() == merged["judge"]).mean(), 3)
+
+    # 4b. Review threshold sweep: what each threshold would do on these cases (for the team's decision).
+    #  rule "disagree_or_p<t": the current rule; rule "p<t": only the auditor's probability.
+    scope = results[results["kind"].isin(["normal", "hard"])]
+    sweep = []
+    for t in THRESHOLDS:
+        for rule in ("disagree_or_p<t", "p<t"):
+            flag = (scope["p_a_category"] < t) | (rule == "disagree_or_p<t") & ~scope["agrees"].astype(bool)
+            wrong, right = ~scope["a_correct"], scope["a_correct"]
+            sweep.append({
+                "rule": rule, "threshold": t,
+                "share_sent_to_review": round(flag.mean(), 3),
+                "router_errors": int(wrong.sum()),
+                "router_errors_caught": int((flag & wrong).sum()),
+                "false_alarms": int((flag & right).sum()),
+                "false_alarm_rate": round((flag & right).sum() / max(right.sum(), 1), 3),
+            })
+    pd.DataFrame(sweep).to_csv(SWEEP, index=False)
+    summary["threshold_sweep_file"] = str(SWEEP.relative_to(ROOT))
 
     # 5. Cost and latency
     live = results[results["tokens"] > 0]

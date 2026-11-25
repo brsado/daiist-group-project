@@ -9,6 +9,7 @@
     "Urbanismo, Obras y Vivienda": "606",
     "Actividades Clasificadas": "605",
     "Agua y Alumbrado": "602",
+    "Limpieza y Residuos": "630",
     "Servicios Sociales": "281",
     "Tesorería y Tributos": "251",
     "OMIC (Consumo)": "321",
@@ -18,38 +19,187 @@
     "Policía Local": "092"
   },
   "categorias": {
-    "Padrón y residencia": {"departamento": "Atención al Ciudadano y Registro", "descripcion": "empadronarse, cambiar el domicilio en el padrón, volantes y certificados de empadronamiento, altas de bebés, bajas"},
-    "Registro y certificados": {"departamento": "Atención al Ciudadano y Registro", "descripcion": "presentar escritos o documentos en el registro, compulsas, certificados que no son de padrón, cita previa general"},
-    "Urbanismo y obras": {"departamento": "Urbanismo, Obras y Vivienda", "descripcion": "licencias de obra, reformas, vallados, segregaciones, ruina, cédulas de habitabilidad, vivienda"},
-    "Vía pública y servicios": {"departamento": "Agua y Alumbrado", "descripcion": "farolas, baches, basura, agua, acometidas, ocupación de vía pública, taxis, responsabilidad patrimonial por daños en la calle, medio ambiente"},
-    "Actividades y negocios": {"departamento": "Actividades Clasificadas", "descripcion": "abrir un negocio, licencia de actividad, terrazas, cambio de titular de un local, venta ambulante"},
-    "Cementerio": {"departamento": "Cementerio Municipal", "descripcion": "nichos, enterramientos, traslado de restos, cambio de titular de un nicho"},
-    "Animales": {"departamento": "Medio Ambiente y Animales", "descripcion": "censo de animales, licencia de perros potencialmente peligrosos, animales abandonados"},
-    "Consumo": {"departamento": "OMIC (Consumo)", "descripcion": "reclamaciones contra empresas o tiendas, hojas de reclamación, facturas abusivas"},
-    "Datos personales y transparencia": {"departamento": "Secretaría General", "descripcion": "protección de datos, derecho de acceso, transparencia, accesibilidad"},
-    "Tributos e impuestos": {"departamento": "Tesorería y Tributos", "descripcion": "IBI, plusvalía, impuesto de vehículos, tasas, recibos, domiciliaciones, bonificaciones"},
-    "Subvenciones y ayudas": {"departamento": "Servicios Sociales", "descripcion": "subvenciones municipales, becas, ayudas a asociaciones o a estudiantes"},
-    "Servicios sociales": {"departamento": "Servicios Sociales", "descripcion": "trabajadora social, ayuda a domicilio, dependencia, emergencia social, familia y menores"},
-    "Cultura, deportes y fiestas": {"departamento": "Concejalías, Cultura, Deportes y Festejos", "descripcion": "instalaciones deportivas, escuelas municipales, fiestas, biblioteca, actividades culturales"},
-    "Alcaldía y cargos": {"departamento": "Alcaldía", "descripcion": "hablar con el alcalde o un concejal, pedir cita con un cargo político"},
-    "Hablar con una persona concreta": {"departamento": "Atención al Ciudadano y Registro", "descripcion": "el vecino pide hablar con un funcionario por su nombre o con una persona en general"},
-    "Otro": {"departamento": "Atención al Ciudadano y Registro", "descripcion": "nada de lo anterior, o asuntos que no son del ayuntamiento (DNI, Seguridad Social, Hacienda, DGT, médico)"}
+    "Padrón y residencia": {
+      "departamento": "Atención al Ciudadano y Registro",
+      "descripcion": "empadronarse, cambiar el domicilio en el padrón, volantes y certificados de empadronamiento, altas de bebés, bajas"
+    },
+    "Registro y certificados": {
+      "departamento": "Atención al Ciudadano y Registro",
+      "descripcion": "presentar escritos o documentos en el registro, compulsas, certificados que no son de padrón, cita previa general"
+    },
+    "Urbanismo y obras": {
+      "departamento": "Urbanismo, Obras y Vivienda",
+      "descripcion": "licencias de obra, reformas, vallados, segregaciones, ruina, cédulas de habitabilidad, vivienda"
+    },
+    "Vía pública y servicios": {
+      "departamento": "Agua y Alumbrado",
+      "descripcion": "farolas, baches, agua, acometidas, basura, contenedores, muebles y enseres abandonados, limpieza de calles, ocupación de vía pública, taxis, responsabilidad patrimonial por daños en la calle, medio ambiente",
+      "otros_departamentos": {
+        "Limpieza y Residuos": "basura, contenedores, recogida de muebles y enseres, limpieza de calles y solares"
+      },
+      "_nota": "departamento = Agua y Alumbrado (farolas, agua, baches) por defecto; otros_departamentos para lo que es de limpieza"
+    },
+    "Actividades y negocios": {
+      "departamento": "Actividades Clasificadas",
+      "descripcion": "abrir un negocio, licencia de actividad, terrazas, cambio de titular de un local, venta ambulante"
+    },
+    "Cementerio": {
+      "departamento": "Cementerio Municipal",
+      "descripcion": "nichos, enterramientos, traslado de restos, cambio de titular de un nicho"
+    },
+    "Animales": {
+      "departamento": "Medio Ambiente y Animales",
+      "descripcion": "censo de animales, licencia de perros potencialmente peligrosos, animales abandonados"
+    },
+    "Consumo": {
+      "departamento": "OMIC (Consumo)",
+      "descripcion": "reclamaciones contra empresas o tiendas, hojas de reclamación, facturas abusivas"
+    },
+    "Datos personales y transparencia": {
+      "departamento": "Secretaría General",
+      "descripcion": "protección de datos, derecho de acceso, transparencia, accesibilidad"
+    },
+    "Tributos e impuestos": {
+      "departamento": "Tesorería y Tributos",
+      "descripcion": "IBI, plusvalía, impuesto de vehículos, tasas, recibos, domiciliaciones, bonificaciones"
+    },
+    "Subvenciones y ayudas": {
+      "departamento": "Servicios Sociales",
+      "descripcion": "subvenciones municipales, becas, ayudas a asociaciones o a estudiantes"
+    },
+    "Servicios sociales": {
+      "departamento": "Servicios Sociales",
+      "descripcion": "trabajadora social, ayuda a domicilio, dependencia, emergencia social, familia y menores"
+    },
+    "Cultura, deportes y fiestas": {
+      "departamento": "Concejalías, Cultura, Deportes y Festejos",
+      "descripcion": "instalaciones deportivas, escuelas municipales, fiestas, biblioteca, actividades culturales"
+    },
+    "Alcaldía y cargos": {
+      "departamento": "Alcaldía",
+      "descripcion": "hablar con el alcalde o un concejal, pedir cita con un cargo político"
+    },
+    "Hablar con una persona concreta": {
+      "departamento": "Atención al Ciudadano y Registro",
+      "descripcion": "el vecino pide hablar con un funcionario por su nombre o con una persona en general"
+    },
+    "Otro": {
+      "departamento": "Atención al Ciudadano y Registro",
+      "descripcion": "nada de lo anterior, o asuntos que no son del ayuntamiento (DNI, Seguridad Social, Hacienda, DGT, médico)"
+    }
   },
   "tramites": [
-    {"slug": "empadronamiento", "categoria": "Padrón y residencia", "nombre": "Alta en el padrón por cambio de residencia", "resumen": "Para quien se muda a Valdeolmo. Se pide en el registro o en la sede electrónica con DNI o NIE, el contrato de alquiler o la escritura, y si no es titular una autorización del propietario. Es gratis y se resuelve en el momento si la documentación está completa.", "guiable": true},
-    {"slug": "volante-empadronamiento", "categoria": "Padrón y residencia", "nombre": "Volante o certificado de empadronamiento", "resumen": "Se obtiene al momento en la sede electrónica con certificado digital o Cl@ve, o en Atención al Ciudadano con el DNI. El volante es gratuito.", "guiable": true},
-    {"slug": "alta-bebe-padron", "categoria": "Padrón y residencia", "nombre": "Alta de un recién nacido en el padrón", "resumen": "Con el libro de familia o la certificación de nacimiento y el DNI de uno de los progenitores empadronados.", "guiable": true},
-    {"slug": "registro-escritos", "categoria": "Registro y certificados", "nombre": "Presentar un escrito o documento en el registro", "resumen": "Por la sede electrónica con certificado digital o Cl@ve, o en persona en Atención al Ciudadano en horario de oficina.", "guiable": true},
-    {"slug": "licencia-obra-menor", "categoria": "Urbanismo y obras", "nombre": "Comunicación previa de obra menor", "resumen": "Para reformas interiores sin tocar estructura (baño, cocina, suelos). Se presenta con una memoria de la obra, presupuesto y el pago de la tasa de obras.", "guiable": true},
-    {"slug": "licencia-obra-mayor", "categoria": "Urbanismo y obras", "nombre": "Licencia de obra mayor", "resumen": "Para construir, ampliar o tocar la estructura. Requiere proyecto firmado por técnico. Conviene hablar antes con Urbanismo.", "guiable": false},
-    {"slug": "incidencia-via-publica", "categoria": "Vía pública y servicios", "nombre": "Aviso de incidencia en la vía pública", "resumen": "Farolas fundidas, baches, contenedores, fugas de agua en la calle. Se registra el aviso con la dirección exacta.", "guiable": true},
-    {"slug": "responsabilidad-patrimonial", "categoria": "Vía pública y servicios", "nombre": "Reclamación por daños (responsabilidad patrimonial)", "resumen": "Para reclamar al ayuntamiento un daño sufrido por el mal estado de la vía pública. Plazo de un año. Hay que aportar fotos, parte médico o facturas.", "guiable": true},
-    {"slug": "abrir-negocio", "categoria": "Actividades y negocios", "nombre": "Comunicación previa de actividad (abrir un negocio)", "resumen": "Actividad inocua (tienda, oficina, peluquería) con declaración responsable; actividad clasificada (bar, taller) con proyecto técnico.", "guiable": true},
-    {"slug": "nicho", "categoria": "Cementerio", "nombre": "Concesión o cambio de titular de un nicho", "resumen": "Con el certificado de defunción, el título del nicho y el DNI de los herederos.", "guiable": true},
-    {"slug": "perro-peligroso", "categoria": "Animales", "nombre": "Licencia de perro potencialmente peligroso", "resumen": "Requiere certificado de antecedentes penales, certificado de aptitud psicológica y seguro de responsabilidad civil.", "guiable": true},
-    {"slug": "reclamacion-consumo", "categoria": "Consumo", "nombre": "Reclamación de consumo en la OMIC", "resumen": "Con la factura o el ticket, la hoja de reclamación si la hay y una copia del DNI.", "guiable": true},
-    {"slug": "ibi-recibo", "categoria": "Tributos e impuestos", "nombre": "IBI: recibos, domiciliación y bonificaciones", "resumen": "El recibo del IBI se puede domiciliar o pedir duplicado en Tesorería. Las bonificaciones (familia numerosa, por ejemplo) se piden antes del 31 de enero.", "guiable": true},
-    {"slug": "ayuda-domicilio", "categoria": "Servicios sociales", "nombre": "Servicio de ayuda a domicilio", "resumen": "Se solicita con cita con la trabajadora social, que valora el caso.", "guiable": false},
-    {"slug": "acceso-datos", "categoria": "Datos personales y transparencia", "nombre": "Derecho de acceso a datos personales", "resumen": "Por escrito en el registro o la sede, con copia del DNI, indicando qué datos se quieren consultar.", "guiable": true}
+    {
+      "slug": "empadronamiento",
+      "categoria": "Padrón y residencia",
+      "nombre": "Alta en el padrón por cambio de residencia",
+      "resumen": "Para quien se muda a Valdeolmo. Se pide en el registro o en la sede electrónica con DNI o NIE, el contrato de alquiler o la escritura, y si no es titular una autorización del propietario. Es gratis y se resuelve en el momento si la documentación está completa.",
+      "guiable": true
+    },
+    {
+      "slug": "volante-empadronamiento",
+      "categoria": "Padrón y residencia",
+      "nombre": "Volante o certificado de empadronamiento",
+      "resumen": "Se obtiene al momento en la sede electrónica con certificado digital o Cl@ve, o en Atención al Ciudadano con el DNI. El volante es gratuito.",
+      "guiable": true
+    },
+    {
+      "slug": "alta-bebe-padron",
+      "categoria": "Padrón y residencia",
+      "nombre": "Alta de un recién nacido en el padrón",
+      "resumen": "Con el libro de familia o la certificación de nacimiento y el DNI de uno de los progenitores empadronados.",
+      "guiable": true
+    },
+    {
+      "slug": "registro-escritos",
+      "categoria": "Registro y certificados",
+      "nombre": "Presentar un escrito o documento en el registro",
+      "resumen": "Por la sede electrónica con certificado digital o Cl@ve, o en persona en Atención al Ciudadano en horario de oficina.",
+      "guiable": true
+    },
+    {
+      "slug": "licencia-obra-menor",
+      "categoria": "Urbanismo y obras",
+      "nombre": "Comunicación previa de obra menor",
+      "resumen": "Para reformas interiores sin tocar estructura (baño, cocina, suelos). Se presenta con una memoria de la obra, presupuesto y el pago de la tasa de obras.",
+      "guiable": true
+    },
+    {
+      "slug": "licencia-obra-mayor",
+      "categoria": "Urbanismo y obras",
+      "nombre": "Licencia de obra mayor",
+      "resumen": "Para construir, ampliar o tocar la estructura. Requiere proyecto firmado por técnico. Conviene hablar antes con Urbanismo.",
+      "guiable": false
+    },
+    {
+      "slug": "incidencia-via-publica",
+      "categoria": "Vía pública y servicios",
+      "nombre": "Aviso de incidencia en la vía pública",
+      "resumen": "Farolas fundidas, baches, contenedores, fugas de agua en la calle. Se registra el aviso con la dirección exacta.",
+      "guiable": true
+    },
+    {
+      "slug": "responsabilidad-patrimonial",
+      "categoria": "Vía pública y servicios",
+      "nombre": "Reclamación por daños (responsabilidad patrimonial)",
+      "resumen": "Para reclamar al ayuntamiento un daño sufrido por el mal estado de la vía pública. Plazo de un año. Hay que aportar fotos, parte médico o facturas.",
+      "guiable": true
+    },
+    {
+      "slug": "recogida-enseres",
+      "categoria": "Vía pública y servicios",
+      "nombre": "Recogida de muebles y enseres",
+      "resumen": "Recogida gratuita de muebles y electrodomésticos viejos con cita previa en Limpieza y Residuos. Si están abandonados en la calle, se da aviso con la dirección exacta.",
+      "guiable": true
+    },
+    {
+      "slug": "abrir-negocio",
+      "categoria": "Actividades y negocios",
+      "nombre": "Comunicación previa de actividad (abrir un negocio)",
+      "resumen": "Actividad inocua (tienda, oficina, peluquería) con declaración responsable; actividad clasificada (bar, taller) con proyecto técnico.",
+      "guiable": true
+    },
+    {
+      "slug": "nicho",
+      "categoria": "Cementerio",
+      "nombre": "Concesión o cambio de titular de un nicho",
+      "resumen": "Con el certificado de defunción, el título del nicho y el DNI de los herederos.",
+      "guiable": true
+    },
+    {
+      "slug": "perro-peligroso",
+      "categoria": "Animales",
+      "nombre": "Licencia de perro potencialmente peligroso",
+      "resumen": "Requiere certificado de antecedentes penales, certificado de aptitud psicológica y seguro de responsabilidad civil.",
+      "guiable": true
+    },
+    {
+      "slug": "reclamacion-consumo",
+      "categoria": "Consumo",
+      "nombre": "Reclamación de consumo en la OMIC",
+      "resumen": "Con la factura o el ticket, la hoja de reclamación si la hay y una copia del DNI.",
+      "guiable": true
+    },
+    {
+      "slug": "ibi-recibo",
+      "categoria": "Tributos e impuestos",
+      "nombre": "IBI: recibos, domiciliación y bonificaciones",
+      "resumen": "El recibo del IBI se puede domiciliar o pedir duplicado en Tesorería. Las bonificaciones (familia numerosa, por ejemplo) se piden antes del 31 de enero.",
+      "guiable": true
+    },
+    {
+      "slug": "ayuda-domicilio",
+      "categoria": "Servicios sociales",
+      "nombre": "Servicio de ayuda a domicilio",
+      "resumen": "Se solicita con cita con la trabajadora social, que valora el caso.",
+      "guiable": false
+    },
+    {
+      "slug": "acceso-datos",
+      "categoria": "Datos personales y transparencia",
+      "nombre": "Derecho de acceso a datos personales",
+      "resumen": "Por escrito en el registro o la sede, con copia del DNI, indicando qué datos se quieren consultar.",
+      "guiable": true
+    }
   ]
 }

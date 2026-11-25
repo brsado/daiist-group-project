@@ -29,7 +29,7 @@ ACTIONS = ["guiar", "transferir", "persona", "fuera_de_ambito"]
 CACHE_FILE = ROOT / "cache" / "component_a.jsonl"
 
 MODEL = "gemini-3.5-flash-lite"  # same model as assignment 3; Flash-Lite has the largest free daily quota
-PROMPT_VERSION = "router-prompt-v1"
+PROMPT_VERSION = "router-prompt-v2"  # v2: other departments per category, reply in the caller's language
 MAX_TOOL_ROUNDS = 3
 # Paid-tier list price, € per million tokens (input, output). VERIFY against
 # https://ai.google.dev/gemini-api/docs/pricing before quoting it in REPORT.md.
@@ -41,13 +41,15 @@ Recibes la transcripción de lo que dice un vecino al llamar. Tu trabajo es ENRU
 Pasos:
 1. Elige la categoría de la llamada. Solo valen estas: {json.dumps(CATEGORIES, ensure_ascii=False)}.
 2. Llama a `info_categoria` con esa categoría para saber el departamento, su extensión y los trámites que se pueden guiar.
+   Si la categoría tiene `otros_departamentos`, elige el que mejor encaje con lo que pide el vecino.
    Si dudas entre dos categorías, consulta las dos. Usa `buscar_tramite` si el vecino describe un trámite concreto.
 3. Decide la acción:
    - "guiar": hay un trámite guiable que encaja claramente con lo que pide.
    - "transferir": es un asunto del ayuntamiento pero no hay trámite guiable; pasa la llamada al departamento.
    - "persona": pide hablar con una persona o con alguien concreto, es una urgencia, o no se entiende lo que quiere.
    - "fuera_de_ambito": no es competencia del ayuntamiento (DNI, Seguridad Social, Hacienda, DGT, médico...). Usa la categoría "Otro".
-4. Escribe una respuesta corta (máximo 40 palabras), en español, de tú a usted, como se le hablaría por teléfono.
+4. Escribe una respuesta corta (máximo 40 palabras), de usted, como se le hablaría por teléfono,
+   EN EL IDIOMA EN QUE HABLA EL VECINO (si habla en inglés, en inglés). El resto del JSON va siempre en español.
    No inventes plazos, precios ni documentos que no te den las herramientas.
    Si hay peligro para personas, di que llame al 112.
 
@@ -72,8 +74,12 @@ def info_categoria(categoria: str) -> dict:
     dept = info["departamento"]
     tramites = [{"slug": t["slug"], "nombre": t["nombre"], "guiable": t["guiable"]}
                 for t in MUNICIPIO["tramites"] if t["categoria"] == categoria]
-    return {"categoria": categoria, "descripcion": info["descripcion"], "departamento": dept,
-            "extension": MUNICIPIO["departamentos"][dept], "horario": MUNICIPIO["horario"], "tramites": tramites}
+    result = {"categoria": categoria, "descripcion": info["descripcion"], "departamento": dept,
+              "extension": MUNICIPIO["departamentos"][dept], "horario": MUNICIPIO["horario"], "tramites": tramites}
+    if others := info.get("otros_departamentos"):
+        result["otros_departamentos"] = [{"departamento": d, "extension": MUNICIPIO["departamentos"][d], "para": para}
+                                         for d, para in others.items()]
+    return result
 
 
 def buscar_tramite(consulta: str) -> list[dict]:

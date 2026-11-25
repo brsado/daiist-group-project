@@ -80,7 +80,8 @@ def on_run(raw_input):
         raise gr.Error("Escriba o elija primero lo que dijo el vecino.")
     record = serve(raw_input)
     outputs = record["outputs"]
-    status = ("⚠️ **Enviada a revisión humana:** el auditor no confía en el enrutado." if record["review"]
+    reasons = outputs.get("review_reasons") or []
+    status = (f"⚠️ **Enviada a revisión humana:** {'; '.join(reasons)}." if record["review"]
               else "✅ **Validada automáticamente.**")
     return (
         _card_a(outputs["component_a"]),
@@ -145,7 +146,8 @@ with gr.Blocks(title=TITLE) as demo:
         summary_table = gr.Dataframe(label="Summary", interactive=False)
         quality_plot = gr.LinePlot(x="time", y="value", color="signal", label="Quality over time", height=300)
         drift_table = gr.Dataframe(label=f"Drift: PSI of the last {monitor.WINDOW} requests against the reference set", interactive=False)
-        category_plot = gr.BarPlot(x="category", y="calls", color="reviewed", label="Calls by router category", height=300)
+        category_plot = gr.BarPlot(x="category", y="calls", color="result", label="Calls by router category",
+                                    color_map={"validada": "#E8873A", "a revisión": "#5477A3"}, height=300)
         gr.Markdown(f"<small>{LOG_TARGET}</small>")
         outputs = [alert_box, summary_table, quality_plot, drift_table, category_plot]
         refresh.click(on_refresh, None, outputs, api_name=False)

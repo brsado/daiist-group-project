@@ -34,7 +34,14 @@ def run(raw_input: str) -> dict:
     text = str(raw_input).strip()
     a = router.route(text)                       # component A: the router agent
     b = auditor.audit(text, a["category"])       # component B: audits A's category
-    review = bool(a.get("error")) or (not b["agrees"]) or b["p_a_category"] < REVIEW_BELOW_P
+    reasons = []
+    if a.get("error"):
+        reasons.append("el enrutador no respondió")
+    if not b["agrees"]:
+        reasons.append("el auditor elige otra categoría")
+    if b["p_a_category"] < REVIEW_BELOW_P:
+        reasons.append(f"el auditor da a la categoría del enrutador menos de un {REVIEW_BELOW_P:.0%}")
+    review = bool(reasons)
     features = input_features(text) | {
         "auditor_confidence": b["confidence"],
         "p_router_category": b["p_a_category"],
@@ -44,7 +51,7 @@ def run(raw_input: str) -> dict:
     return {
         "input_summary": text[:120],
         "features": features,
-        "outputs": {"component_a": a, "component_b": b},
+        "outputs": {"component_a": a, "component_b": b, "review_reasons": reasons},
         "versions": {"component_a": f"{router.MODEL}/{router.PROMPT_VERSION}", "component_b": b["version"],
                      "review_rule": f"disagree_or_p<{REVIEW_BELOW_P}"},
         "review": review,

@@ -6,11 +6,12 @@
 
 | First name | GitHub username | Main areas |
 |---|---|---|
-| | | |
-| | | |
-| | | |
-| | | |
-| | | |
+| Bruno | brsado | Idea and context (Moysi Voice AI), architecture, technical base: router agent, ML auditor, app, monitoring, evaluation pipeline, deploy |
+| | | Part A · evaluation cases (see TAREAS.md) |
+| | | Part B · human labels and LLM judge |
+| | | Part C · thresholds and go / no-go decision |
+| | | Part D · business case and failure analysis |
+| | | Part E · online operation and presentation |
 
 ## Log
 
@@ -18,4 +19,8 @@
 
 | Date | Who | What |
 |---|---|---|
-| | | |
+| 2026-11-25 | Bruno | Chose the use case (post-call audit of an AI call router, from Moysi Voice AI) and the two components; fictional municipality and anonymised data |
+| 2026-11-25 | Bruno | Component A: Gemini router agent with tools (`router.py`), based on his assignment 3 agent |
+| 2026-11-25 | Bruno | Component B: ML auditor (`auditor.py`), training phrases (`data/`), model comparison |
+| 2026-11-25 | Bruno | Pipeline and review rule, Spanish app, Monitoring tab, drift alert, evaluation script (`evaluate.py`), threshold sweep |
+| 2026-11-25 | Bruno | First draft of eval files, Render config, team task kit (`TAREAS.md`) |
