@@ -56,7 +56,7 @@ farola fundida en mi calle desde hace una semana".
    call categories. B returns the probability it gives to A's category and its own top category.
 3. **Review rule.** The call goes to a person if B picks another category, or gives A's category
    less than `REVIEW_BELOW_P` (TODO part C: final value), or if Gemini failed. In the example B
-   agreed with 53%, so the call was validated automatically.
+   agreed, so the call was validated automatically; the app shows the reasons when it is not.
 4. **Log and monitoring.** Every request is logged (below) and the Monitoring tab reads the logs.
 
 **Why these models.** Gemini Flash-Lite: tool calling, good with colloquial Spanish and other
@@ -93,7 +93,20 @@ The procedure summaries are illustrative and were not checked against any real t
 
 ### Components
 
-> TODO: final numbers after part A (see `eval/summary.json`, `eval/component_b_metrics.json`).
+Numbers on the draft cases (36); TODO part A: rerun with the final cases.
+
+| Component | Metric | Result | Test data |
+|---|---|---|---|
+| A · router (Gemini, prompt v2) | Category accuracy / macro-F1 | 97% / 0.97 | 36 cases |
+| A · router | Category accuracy on normal + hard | 100% | 23 cases |
+| A · router | Action accuracy (guiar / transferir / persona / fuera de ámbito) | 78% | 36 cases |
+| B · auditor (complement naive Bayes, chosen) | Accuracy / macro-F1 | 75% / 0.73 | 142 held-out phrases |
+| B · auditor, alternatives | Logistic regression; calibrated linear SVM | 72% / 0.71; 75% / 0.73 | same 142 phrases |
+| B · auditor | Category accuracy on the cases | 83% | 36 cases |
+
+The router made no category error on the normal and hard draft cases, so the auditor had no
+router error to catch: every call it sent to review there was a false alarm (5 of 23 at the
+current threshold). TODO part A: harder cases.
 
 ### End to end
 
@@ -103,9 +116,14 @@ The procedure summaries are illustrative and were not checked against any real t
 
 ### Cost and latency
 
-> TODO: final numbers from `eval/summary.json` (`cost`). Prices in `router.PRICE_EUR_PER_M` are
-> an assumption to check against https://ai.google.dev/gemini-api/docs/pricing. Component B costs
-> nothing and takes milliseconds.
+Per call, on the 36 cases: about 2,640 tokens and €0.00028 for the router (2–4 Gemini requests,
+because of the tool rounds), median 3.6 s and 90th percentile 17 s (slow when Gemini is busy and we
+retry). The auditor costs nothing and takes milliseconds. Prices in `router.PRICE_EUR_PER_M` are an
+assumption to check against https://ai.google.dev/gemini-api/docs/pricing. TODO part C: cost per
+month at the chosen volume.
+
+**Free-tier limit.** One Gemini key allows 500 requests a day (`gemini-3.5-flash-lite`), so about
+150 audited calls a day. We hit it while evaluating; the online app uses its own key.
 
 ## Operations
 
@@ -131,9 +149,12 @@ normal cases, so the auditor is *more* confident on normal traffic, which is not
 An alert needs PSI > 0.25 **and** more than twice the PSI expected by chance for the sample sizes,
 over at least 20 calls.
 
-**Drift demo.** TODO (part E): table from `main.py drift-demo`. Draft result: quiet on the 16
-normal cases (share of Spanish words PSI 0.26 against a threshold of 0.68), alert on the 12
-shifted inputs (PSI 7.4 against 0.84; auditor confidence PSI 2.6 and falling).
+**Drift demo** (`main.py drift-demo`, prompt v2; TODO part E: rerun after the final cases):
+
+| Inputs | `share_spanish_words` PSI / threshold | `auditor_confidence` PSI / threshold | Alert |
+|---|---|---|---|
+| 16 normal cases | 0.26 / 0.68 | 0.51 / 0.68 | quiet |
+| 12 shifted inputs (other languages) | 7.42 / 0.84 | 3.71 / 0.84, falling | fires |
 
 **Other alerts.** The auditor agrees with the router on fewer than `AGREEMENT_ALERT` of the last
 calls, or more than `THUMBS_DOWN_ALERT` of rated calls are 👎 (TODO part C: final thresholds and
