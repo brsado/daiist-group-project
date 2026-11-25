@@ -7,7 +7,7 @@
 | First name | GitHub username | Main areas |
 |---|---|---|
 | Bruno | brsado | Idea and context (Moysi Voice AI), architecture, technical base: router agent, ML auditor, app, monitoring, evaluation pipeline, deploy |
-| | | Part A · evaluation cases (see TAREAS.md) |
+| Manuela |mcarreiraieu2022| Part A · evaluation cases (see TAREAS.md) |
 | | | Part B · human labels and LLM judge |
 | | | Part C · thresholds and go / no-go decision |
 | | | Part D · business case and failure analysis |
@@ -24,3 +24,4 @@
 | 2026-11-25 | Bruno | Component B: ML auditor (`auditor.py`), training phrases (`data/`), model comparison |
 | 2026-11-25 | Bruno | Pipeline and review rule, Spanish app, Monitoring tab, drift alert, evaluation script (`evaluate.py`), threshold sweep |
 | 2026-11-25 | Bruno | First draft of eval files, Render config, team task kit (`TAREAS.md`) |
+| 2026-11-25 | Manuela | Part A: reviewed the 36 draft cases and wrote 15 new hard cases (51 in total: 16 normal, 22 hard, 7 review, 6 out_of_scope); ran the evaluation and check.py |

@@ -114,6 +114,8 @@ current threshold). TODO part A: harder cases.
 > against the baseline, the judge's rubric (`JUDGE_PROMPT` in `evaluate.py`) and the agreement
 > with our own labels.
 
+`eval/cases.csv` has 51 cases (part A, Manuela): 16 normal, 22 hard, 7 review and 6 out_of_scope. The 36 drafts were reviewed and kept, and 15 new hard cases were written by hand as realistic, colloquial calls, each built around a trap between two neighbouring categories of `data/municipio.json`; the expected answer follows the category definitions in that file. Two examples: c40 «Necesito que me pasen directamente con el concejal que lleva lo de mi barrio…» (expected Alcaldía y cargos | transferir; the router chose Hablar con una persona concreta and the auditor sent it to review) and c44 «Nada, llamaba para darles las gracias por la estupenda iluminación de mi calle…» (irony; expected Vía pública y servicios | guiar). On the 51 cases the product is right in 66.7% of them, against 13% for today's switchboard. The router got the category wrong in only 1 normal or hard case, which the auditor caught, but the auditor also sent many correct hard calls to review (precision 0.056).
+
 ### Cost and latency
 
 Per call, on the 36 cases: about 2,640 tokens and €0.00028 for the router (2–4 Gemini requests,
@@ -196,3 +198,5 @@ Gemini is part of the product (component A and the LLM judge). The problem, the 
 how they connect, the metrics, the thresholds, the review rule, the evaluation cases, our own
 labels and the analysis in this report are the team's. TODO: each member adds how they used AI
 in their part.
+
+Manuela (part A) used Claude to understand the project and the category definitions, to review the format of her cases, add them to the CSV, and guide the evaluation and git steps. The case phrases, their kinds and their expected answers were written and decided by her.
