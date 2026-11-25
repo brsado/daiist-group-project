@@ -1,9 +1,9 @@
 {
   "component_a": {
-    "category_accuracy_all": 0.972,
-    "category_macro_f1_all": 0.974,
-    "category_accuracy_normal_hard": 1.0,
-    "action_accuracy_all": 0.778
+    "category_accuracy_all": 0.961,
+    "category_macro_f1_all": 0.941,
+    "category_accuracy_normal_hard": 0.974,
+    "action_accuracy_all": 0.765
   },
   "component_b": {
     "held_out": {
@@ -25,18 +25,18 @@
       },
       "chosen": "tfidf_complement_nb"
     },
-    "category_accuracy_on_cases": 0.833,
-    "router_errors_normal_hard": 0,
-    "router_errors_caught (recall)": null,
-    "flagged_that_were_errors (precision)": 0.0
+    "category_accuracy_on_cases": 0.824,
+    "router_errors_normal_hard": 1,
+    "router_errors_caught (recall)": 1.0,
+    "flagged_that_were_errors (precision)": 0.056
   },
   "end_to_end": {
     "by_kind": {
       "hard": {
-        "cases": 7,
-        "correct": 0.571,
-        "sent_to_review": 0.429,
-        "baseline_switchboard": 0.286
+        "cases": 22,
+        "correct": 0.318,
+        "sent_to_review": 0.727,
+        "baseline_switchboard": 0.136
       },
       "normal": {
         "cases": 16,
@@ -57,22 +57,22 @@
         "baseline_switchboard": 0.0
       }
     },
-    "product_correct": 0.861,
-    "baseline_switchboard_correct": 0.139,
-    "share_sent_to_review": 0.389,
-    "router_errors_caught_by_product": 0,
-    "router_errors_caught_by_random_10pct_audit (expected)": 0.0
+    "product_correct": 0.667,
+    "baseline_switchboard_correct": 0.118,
+    "share_sent_to_review": 0.529,
+    "router_errors_caught_by_product": 1,
+    "router_errors_caught_by_random_10pct_audit (expected)": 0.1
   },
   "judge": {
     "version": "judge-rubric-v2",
-    "pass_rate": 0.971
+    "pass_rate": 0.941
   },
   "threshold_sweep_file": "eval/threshold_sweep.csv",
   "cost": {
-    "mean_tokens": 2638.6,
-    "mean_cost_eur": 0.000275,
-    "median_latency_s": 3.58,
-    "p90_latency_s": 17.15,
+    "mean_tokens": 2686.4,
+    "mean_cost_eur": 0.00028,
+    "median_latency_s": 6.35,
+    "p90_latency_s": 17.9,
     "price_assumption_eur_per_m_tokens": {
       "input": 0.09,
       "output": 0.37
