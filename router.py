@@ -177,8 +177,10 @@ def _generate(client, contents, config):
         try:
             return client.models.generate_content(model=MODEL, contents=contents, config=config)
         except Exception as error:  # noqa: BLE001
-            transient = any(code in str(error)[:20] for code in ("503", "429", "500"))
-            if wait is None or not transient:
+            message = str(error)
+            transient = any(code in message[:20] for code in ("503", "429", "500"))
+            daily_quota_gone = "per day" in message or "PerDay" in message  # resets tomorrow: retrying only delays the answer
+            if wait is None or not transient or daily_quota_gone:
                 raise
             time.sleep(wait)
 
