@@ -93,20 +93,20 @@ The procedure summaries are illustrative and were not checked against any real t
 
 ### Components
 
-Numbers on the draft cases (36); TODO part A: rerun with the final cases.
+Numbers on the final 51 cases (`eval/summary.json`).
 
 | Component | Metric | Result | Test data |
 |---|---|---|---|
-| A · router (Gemini, prompt v2) | Category accuracy / macro-F1 | 97% / 0.97 | 36 cases |
-| A · router | Category accuracy on normal + hard | 100% | 23 cases |
-| A · router | Action accuracy (guiar / transferir / persona / fuera de ámbito) | 78% | 36 cases |
+| A · router (Gemini, prompt v2) | Category accuracy / macro-F1 | 96% / 0.94 | 51 cases |
+| A · router | Category accuracy on normal + hard | 97% (1 error) | 38 cases |
+| A · router | Action accuracy (guiar / transferir / persona / fuera de ámbito) | 77% | 51 cases |
 | B · auditor (complement naive Bayes, chosen) | Accuracy / macro-F1 | 75% / 0.73 | 142 held-out phrases |
 | B · auditor, alternatives | Logistic regression; calibrated linear SVM | 72% / 0.71; 75% / 0.73 | same 142 phrases |
-| B · auditor | Category accuracy on the cases | 83% | 36 cases |
+| B · auditor | Category accuracy on the cases | 82% | 51 cases |
 
-The router made no category error on the normal and hard draft cases, so the auditor had no
-router error to catch: every call it sent to review there was a false alarm (5 of 23 at the
-current threshold). TODO part A: harder cases.
+On the 38 normal and hard cases the router made one category error (c40), and the auditor sent
+it to review. At the current threshold it also sent 17 correct calls to review: 18 flags for 1
+real error (precision 0.056). See `eval/threshold_sweep.csv` for other thresholds.
 
 ### End to end
 
@@ -118,8 +118,8 @@ current threshold). TODO part A: harder cases.
 
 ### Cost and latency
 
-Per call, on the 36 cases: about 2,640 tokens and €0.00028 for the router (2–4 Gemini requests,
-because of the tool rounds), median 3.6 s and 90th percentile 17 s (slow when Gemini is busy and we
+Per call, on the 51 cases: about 2,690 tokens and €0.00028 for the router (2–4 Gemini requests,
+because of the tool rounds), median 6.4 s and 90th percentile 18 s (slow when Gemini is busy and we
 retry). The auditor costs nothing and takes milliseconds. Prices in `router.PRICE_EUR_PER_M` are an
 assumption to check against https://ai.google.dev/gemini-api/docs/pricing. TODO part C: cost per
 month at the chosen volume.
