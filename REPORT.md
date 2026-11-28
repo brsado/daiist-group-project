@@ -206,6 +206,8 @@ how they connect, the metrics, the thresholds, the review rule, the evaluation c
 labels and the analysis in this report are the team's. TODO: each member adds how they used AI
 in their part.
 
-Manuela (part A) used Claude to understand the project and the category definitions, to review the format of her cases, add them to the CSV, and guide the evaluation and git steps. The case phrases, their kinds and their expected answers were written and decided by her.
+Manuela (part A) used Claude to understand the project and the category definitions, to review the format of her cases, add them to the CSV, and guide the evaluation and git steps. The case phrases, their kinds and their expected answers were written and decided by Manuela.
 
 Brissa (Part B): Claude set up the project, explained the cases, and ran the evaluation. I decided the labels, the criteria behind them, and drafted the report.
+
+Maria (Part C): Claude explained the review rule, the alerts and the threshold table and helped me with the arithmetic.
