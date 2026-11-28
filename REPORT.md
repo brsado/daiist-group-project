@@ -55,7 +55,7 @@ farola fundida en mi calle desde hace una semana".
    A TF-IDF representation (word 1–2-grams and character 3–5-grams) feeds a classifier over the 16
    call categories. B returns the probability it gives to A's category and its own top category.
 3. **Review rule.** The call goes to a person if B picks another category, or gives A's category
-   less than `REVIEW_BELOW_P` (TODO part C: final value), or if Gemini failed. In the example B
+   less than `REVIEW_BELOW_P` 0.10, or if Gemini failed. In the example B
    agreed, so the call was validated automatically; the app shows the reasons when it is not.
 4. **Log and monitoring.** Every request is logged (below) and the Monitoring tab reads the logs.
 
@@ -123,8 +123,9 @@ real error (precision 0.056). See `eval/threshold_sweep.csv` for other threshold
 Per call, on the 51 cases: about 2,690 tokens and €0.00028 for the router (2–4 Gemini requests,
 because of the tool rounds), median 6.4 s and 90th percentile 18 s (slow when Gemini is busy and we
 retry). The auditor costs nothing and takes milliseconds. Prices in `router.PRICE_EUR_PER_M` are an
-assumption to check against https://ai.google.dev/gemini-api/docs/pricing. TODO part C: cost per
-month at the chosen volume.
+assumption to check against https://ai.google.dev/gemini-api/docs/pricing. 
+
+With one call per resident per year in a town of 5,000 people, that is about 14 calls a day. At an average cost of €0.00028 per call (Gemini only, since the auditor is free), this comes to about €0.12 a month (between €0.03 and €0.15 for 4 to 18 calls a day). The real cost is the time of the person who reviews about 2.7 calls a day.
 
 **Free-tier limit.** One Gemini key allows 500 requests a day (`gemini-3.5-flash-lite`), so about
 150 audited calls a day. We hit it while evaluating; the online app uses its own key.
@@ -161,8 +162,7 @@ over at least 20 calls.
 | 12 shifted inputs (other languages) | 7.42 / 0.84 | 3.71 / 0.84, falling | fires |
 
 **Other alerts.** The auditor agrees with the router on fewer than `AGREEMENT_ALERT` of the last
-calls, or more than `THUMBS_DOWN_ALERT` of rated calls are 👎 (TODO part C: final thresholds and
-why).
+calls, or more than `THUMBS_DOWN_ALERT` of rated calls are 👎. Setting the alerts as follows: agreement at 0.6, thumbs-down at 0.3, and PSI at 0.25. Also, leaving agreement alone because false alerts bother me most: if they fire too often, people stop paying attention, and on normal calls agreement was 100%. We lowered thumbs-down from 0.4 to 0.3 so the alert is actually useful, since the judge rated 94% of answers as good and an extra thumbs-down usually means something. PSI stays at 0.25, the usual value: in drift-demo the panel stayed quiet on the 16 normal calls and fired on the 12 that had been changed. On normal calls we accept almost no false alerts. What would really worry is a change in the kind of calls, with new topics or vocabulary, because we would expect it to push PSI up and agreement down at the same time.
 
 ## Failures
 
@@ -174,9 +174,14 @@ it has not seen; it is lost in other languages (which is why that is the drift w
 the department for street furniture was wrong until we added "Limpieza y Residuos".
 
 ## Decision
+We keep the `disagree_or_p<t` rule and lower the threshold from 0.35 to 0.10. The `disagree` part catches the only router error in the cases (c40) at every threshold, because the auditor picks a different category. With `p<t` alone, that error is missed at 0.20 or lower and caught only from 0.25. At 0.10, just 4 normal or hard cases are false alarms (11% of the calls the router got right), against 17 (46%) at 0.35. A random 10% audit would catch only 10% of errors on average, and since the audit happens after the call, the error would already have reached the neighbor.
 
-> TODO (part C): the review rule and how many calls a day it would send to a person; go / no-go
-> / go with conditions, the conditions and the evidence.
+For volume, we assume one call per resident/ year. In a town of 5000 that is about 14 calls a day (between 4 and 18), of which about 2.7 go to review, for about €0.12 a month. The figures come from Pamplona, Las Rozas, Alicante and Zaragoza, with approximate populations: these are cities, not small towns.
+
+Our verdict is go with conditions: revisit the threshold once there is more data, keep watching thumbs-down with the alert at 0.3, and keep a small random review going.
+
+The evidence: at 0.10, across the 51 cases, 19.6% of calls go to review (down from 53%). The product is right 90% of the time (up from 67%), counting false alarms as errors, while the simple switchboard is right 12%; precision rises from 5.6% to 20%. Against this, among the 7 cases that should go to a person, the share sent to review drops from 86% to 57%. Above all, everything rests on a single error, so the evidence is very thin and the threshold may be fitted to that one case.
+
 
 ## Bonus: reinforcement learning
 

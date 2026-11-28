@@ -1,9 +1,7 @@
 """
 Monitoring: quality signals over time, drift against the reference set, alerts.
 
-The thresholds below are PLACEHOLDERS. Choose yours and justify them in
-REPORT.md: how many false alarms on normal inputs you accept, and how big a
-shift has to be before it matters for your product.
+The thresholds below were chosen by the team; see REPORT.md (Decision) for the reasons.
 """
 
 from pathlib import Path
@@ -15,12 +13,12 @@ ROOT = Path(__file__).resolve().parent
 REFERENCE_FILE = ROOT / "monitoring" / "reference_features.csv"
 
 PSI_BINS = 5           # quantile bins of the reference; few, because samples are small
-PSI_ALERT = 0.25       # PLACEHOLDER: alert when a feature's PSI exceeds this...
+PSI_ALERT = 0.25       # alert when a feature's PSI exceeds this...
 NOISE_MULTIPLE = 2     # ...and this many times the PSI expected by chance (psi_noise)
 WINDOW = 100           # the drift check looks at the last WINDOW requests...
 MIN_WINDOW = 20        # ...and stays silent with fewer than this
-THUMBS_DOWN_ALERT = 0.4  # PLACEHOLDER: alert when this share of rated requests is 👎
-AGREEMENT_ALERT = 0.6    # PLACEHOLDER: alert when the auditor agrees with the router on fewer than this share of calls
+THUMBS_DOWN_ALERT = 0.3  # alert when this share of rated requests is 👎
+AGREEMENT_ALERT = 0.6    # alert when the auditor agrees with the router on fewer than this share of calls
 
 # Which features can fire the drift alert, and in which direction ("both", or "down": only when the
 # live mean is below the reference mean). The others are still logged and shown with their PSI.

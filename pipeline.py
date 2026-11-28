@@ -14,8 +14,8 @@ import router
 
 # Review rule: a call goes to the supervisor when the auditor disagrees with the router, or
 # when the auditor gives the router's category a probability below this threshold.
-# PLACEHOLDER until the team sets it from eval/results.csv (see REPORT.md, Decision).
-REVIEW_BELOW_P = 0.35
+# Chosen from eval/threshold_sweep.csv (see REPORT.md, Decision).
+REVIEW_BELOW_P = 0.10
 
 _SPANISH = {"de", "la", "que", "el", "en", "y", "a", "los", "se", "del", "las", "un", "por", "con", "no",
             "una", "su", "para", "es", "al", "lo", "me", "mi", "quiero", "hola", "necesito", "quería", "tengo", "le"}
