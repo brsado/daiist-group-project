@@ -9,7 +9,7 @@
 | Bruno | brsado | Idea and context (Moysi Voice AI), architecture, technical base: router agent, ML auditor, app, monitoring, evaluation pipeline, deploy |
 | Manuela |mcarreiraieu2022| Part A · evaluation cases (see TAREAS.md) |
 | Brissa | brissajames | Part B · human labels (24 router replies graded pass/fail with reasons) and check of the LLM judge against them; judge analysis in REPORT.md |
-| | | Part C · thresholds and go / no-go decision |
+| Maria | mfernandezg | Part C · thresholds and go / no-go decision |
 | | | Part D · business case and failure analysis |
 | | | Part E · online operation and presentation |
 
@@ -29,3 +29,6 @@
 | 2026-11-28 | Brissa | Ran the evaluation: judge agreement with our labels 70.8%, but it caught only 1 of our 7 fails |
 | 2026-11-28 | Brissa | Analysed the judge's disagreements (person vs department, unnamed or wrong department, inconsistency); decided to keep rubric v2 and not use its pass rate as evidence of quality |
 | 2026-11-28 | Brissa | Wrote the LLM judge paragraph in REPORT.md (Evaluation > End to end); ran check.py (all checks passed) |
+| 2026-11-28 | Maria | Part C: chose the review rule and threshold (kept `disagree_or_p<t`, `REVIEW_BELOW_P` from 0.35 to 0.10) from the threshold sweep, and re-ran the evaluation |
+| 2026-11-28 | Maria | Part C: set the alert thresholds (agreement 0.6, thumbs-down 0.3, PSI 0.25) and removed the placeholder comments in `monitor.py` and `pipeline.py` |
+| 2026-11-28 | Maria | Part C: estimated the daily call volume from city 010 data, the share sent to review and the monthly cost; wrote "Other alerts", the cost and the "Decision" (go with conditions) in REPORT.md; ran drift-demo and check.py |
