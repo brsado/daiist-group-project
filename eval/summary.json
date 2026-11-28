@@ -65,7 +65,9 @@
   },
   "judge": {
     "version": "judge-rubric-v2",
-    "pass_rate": 0.941
+    "pass_rate": 0.941,
+    "human_labels": 24,
+    "agreement_with_humans": 0.708
   },
   "threshold_sweep_file": "eval/threshold_sweep.csv",
   "cost": {

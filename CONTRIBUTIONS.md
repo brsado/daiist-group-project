@@ -8,7 +8,7 @@
 |---|---|---|
 | Bruno | brsado | Idea and context (Moysi Voice AI), architecture, technical base: router agent, ML auditor, app, monitoring, evaluation pipeline, deploy |
 | Manuela |mcarreiraieu2022| Part A · evaluation cases (see TAREAS.md) |
-| | | Part B · human labels and LLM judge |
+| Brissa | brissajames | Part B · human labels (24 router replies graded pass/fail with reasons) and check of the LLM judge against them; judge analysis in REPORT.md |
 | | | Part C · thresholds and go / no-go decision |
 | | | Part D · business case and failure analysis |
 | | | Part E · online operation and presentation |
@@ -25,3 +25,7 @@
 | 2026-11-25 | Bruno | Pipeline and review rule, Spanish app, Monitoring tab, drift alert, evaluation script (`evaluate.py`), threshold sweep |
 | 2026-11-25 | Bruno | First draft of eval files, Render config, team task kit (`TAREAS.md`) |
 | 2026-11-25 | Manuela | Part A: reviewed the 36 draft cases and wrote 15 new hard cases (51 in total: 16 normal, 22 hard, 7 review, 6 out_of_scope); ran the evaluation and check.py |
+| 2026-11-28 | Brissa | Part B: graded 24 router replies by hand (8 normal, 8 hard, 4 review, 4 out_of_scope; 17 pass, 7 fail) with a short reason each, in `eval/human_labels.csv` |
+| 2026-11-28 | Brissa | Ran the evaluation: judge agreement with our labels 70.8%, but it caught only 1 of our 7 fails |
+| 2026-11-28 | Brissa | Analysed the judge's disagreements (person vs department, unnamed or wrong department, inconsistency); decided to keep rubric v2 and not use its pass rate as evidence of quality |
+| 2026-11-28 | Brissa | Wrote the LLM judge paragraph in REPORT.md (Evaluation > End to end); ran check.py (all checks passed) |

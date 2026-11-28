@@ -1,1 +1,25 @@
 id,label,comment
+c01,pass,"Answers what was asked and guides as expected, but the typo ""padón"" could cause some confusion"
+c17,pass,"Understands that ""el papel de la casa"" means registering in the padrón, offers to guide and invents nothing"
+c24,fail,Three different requests should go to a person; it only transfers to Padrón and leaves the business and IBI questions open
+c31,pass,"Correctly says the DNI is not a town hall matter and points to the Policía Nacional (accurate, though not from the town hall facts)"
+c02,pass,"Guides with concrete steps taken from the procedure facts, nothing invented"
+c19,pass,"Transfers to Actividades Clasificadas, the department that handles terraces, as expected"
+c26,fail,"Guesses a department (Registro) for a vague call; it should have asked which document the caller means to know where to send them, or passed them to a person"
+c03,pass,Right category and action; it announces the guidance but does not give a step yet (e.g. asking for the exact address)
+c21,pass,"Transfers instead of guiding, but to the right department (Urbanismo y Obras), which is who will actually guide the caller"
+c33,pass,"Correctly says Social Security is not a town hall matter, invents nothing and is polite"
+c04,pass,Identifies the right procedure (minor works notice for a kitchen and bathroom refit) and guides
+c23,pass,"Connects the caller with the person they asked for, in her department; short and correct"
+c28,fail,Two problems for different departments should go to a person; it sends everything to Urbanismo and implies they handle the dogs too
+c05,fail,"Says ""le paso con el departamento"" without naming which one, and could have guided: a shop only needs a declaración responsable"
+c06,pass,"Correct: duplicate or direct debit at Tesorería, as in the procedure facts, and offers to explain the steps"
+c38,pass,Works out the document the caller needs (certificado de empadronamiento) and says where to get it
+c35,pass,Correctly says the tax return is not a town hall matter and points to the Agencia Tributaria
+c07,pass,"Transfers instead of guiding, but to the right office (OMIC) and names it"
+c08,pass,Identifies the dangerous-dog licence and offers to guide
+c40,fail,"Sends the caller to Atención al Ciudadano instead of Alcaldía, where the councillors are: wrong department"
+c44,fail,"Gets the irony (it is a complaint about the street lights) but says ""el departamento correspondiente"" without naming it, as in c05"
+c48,pass,"Understands it is the IBI large-family discount, not Servicios Sociales, and sends the caller to Tributos"
+c30,fail,Two different problems should go to a person; it only handles the brown water and forgets the fine
+c36,pass,Correctly says the weather is not a town hall matter and points to AEMET
